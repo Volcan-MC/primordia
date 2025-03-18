@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "side": "primordia:block/wood_types/willow/willow_log",
+    "end": "primordia:block/wood_types/willow/willow_log_top"
+  }
+}

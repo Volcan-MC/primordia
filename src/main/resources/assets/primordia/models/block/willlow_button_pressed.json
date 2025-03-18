@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button_pressed",
+  "textures": {
+    "texture": "primordia:block/wood_types/willow/willow_planks"
+  }
+}

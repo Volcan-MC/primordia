@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "primordia:block/forge_bottom",
+    "east": "primordia:block/forge_side",
+    "north": "primordia:block/forge_front",
+    "particle": "primordia:block/forge_front",
+    "south": "primordia:block/forge_side",
+    "up": "primordia:block/forge_top",
+    "west": "primordia:block/forge_side"
+  }
+}

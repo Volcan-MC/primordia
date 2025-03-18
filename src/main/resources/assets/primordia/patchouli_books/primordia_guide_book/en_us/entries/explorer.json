@@ -1,0 +1,11 @@
+{
+  "name": "Survivor's Gear",
+  "icon": "primordia:survivors_chestplate",
+  "category": "primordia:starter",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A Basic Armour Set you get in the Starter equipment (but also crafted with the recipes to the right) which has stats the same as chainmail but less durability than leather."
+    }
+  ]
+}

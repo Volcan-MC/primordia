@@ -1,0 +1,5 @@
+{
+  "name": "Starter Equipment",
+  "description": "Documentation on the Equipment given to the player at the start of the playthrough.",
+  "icon": "minecraft:chest"
+}

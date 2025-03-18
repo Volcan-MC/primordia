@@ -1,0 +1,71 @@
+{
+  "item.primordia.broken_sword": "Broken Sword",
+  "item.primordia.tattered_pickaxe": "Tattered Pickaxe",
+  "item.primordia.cloaking_talisman": "Cloaking Talisman",
+
+  "advancements.primordia.starterkit.title": "The Primordia Experience",
+  "advancements.primordia.starterkit.desc": "Obtained the Primordia Starter Equipment",
+
+  "item.primordia.starter_pouch": "Starter Pouch",
+
+  "item.primordia.stormweaver": "Stormweaver",
+
+  "tooltip.primordia.stormweaver.shift_down": "The Blade Of A thousand volts, capable of even splitting the sky into pieces",
+  "tooltip.primordia.stormweaver": "Press [Shift] To Show More Info",
+
+  "tooltip.primordia.weapon.twohanded": "2-Handed",
+
+  "effect.primordia.bleed": "Bleeding",
+  "effect.primordia.freezing": "Freezing",
+  "effect.primordia.cloaking": "Cloaking",
+
+  "item.minecraft.potion.effect.hypothermia_potion": "Potion Of Hypothermia",
+  "item.minecraft.splash_potion.effect.hypothermia_potion": "Splash Potion Of Hypothermia",
+  "item.minecraft.lingering_potion.effect.hypothermia_potion": "Lingering Potion Of Hypothermia",
+
+  "item.minecraft.tipped_arrow.effect.hypothermia_potion": "Arrow Of Hypothermia",
+
+  "itemgroup.primordia.primordia": "Primordia",
+  "itemgroup.primordia.primordia.decor": "Primordia Decor",
+
+  "block.primordia.stone_table": "Stone Table",
+
+  "item.primordia.tattered_cloth": "Tattered Cloth",
+  "item.primordia.tattered_axe": "Tattered Axe",
+  "item.primordia.survivors_compass": "Survivor's Compass",
+  "item.primordia.survivors_helmet": "Survivor's Helmet",
+  "item.primordia.survivors_chestplate": "Survivor's Chestplate",
+  "item.primordia.survivors_leggings": "Survivor's Leggings",
+  "item.primordia.survivors_boots": "Survivor's Boots",
+
+  "item.primordia.basic_waterskin": "Basic Waterskin",
+
+  "item.primordia.flint_knife": "Flint Knife",
+  "item.primordia.flint_spear": "Fishing Spear",
+
+  "item.primordia.salmon_stick": "Salmon On A Stick",
+  "item.primordia.cod_stick": "Cod On A Stick",
+  "item.primordia.tropical_fish_stick": "Tropical Fish On A Stick",
+
+  "item.primordia.cooked_salmon_stick": "Cooked Salmon On A Stick",
+  "item.primordia.cooked_cod_stick": "Cooked Cod On A Stick",
+
+  "block.primordia.wooden_stool": "Wooden Stool",
+  "block.primordia.forge": "Forge",
+  "block.primordia.forge_bricks": "Forge Bricks",
+
+  "block.primordia.willow_log": "Willow Log",
+  "block.primordia.willow_wood": "Willow Wood",
+  "block.primordia.stripped_willow_log": "Stripped Willow Log",
+  "block.primordia.stripped_willow_wood": "Stripped Willow Wood",
+  "block.primordia.willow_planks": "Willow Planks",
+  "block.primordia.willow_stairs": "Willow Stairs",
+  "block.primordia.willow_slab": "Willow Slab",
+  "block.primordia.willow_door": "Willow Door",
+  "block.primordia.willow_trapdoor": "Willow Trapdoor",
+  "block.primordia.willow_pressure_plate": "Willow Pressure Plate",
+  "block.primordia.willow_button": "Willow Button",
+
+  "tooltip.primordia.contents": "- Empty -",
+  "tooltip.primordia.waterskin": "Hold [Shift] To Show Contents"
+}

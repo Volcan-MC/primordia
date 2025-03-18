@@ -1,0 +1,11 @@
+{
+  "name": "Fire Charges",
+  "icon": "minecraft:fire_charge",
+  "category": "primordia:fire",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The Basic Fire Charge whilst hot, not hot enough that it could burn the person holding it."
+    }
+  ]
+}

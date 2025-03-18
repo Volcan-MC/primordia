@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "primordia:block/carved_pale_pumpkin",
+    "side": "primordia:block/pale_pumpkin",
+    "up": "primordia:block/pale_stem",
+    "down": "primordia:block/pale_stem"
+  }
+}
+
+

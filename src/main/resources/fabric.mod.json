@@ -1,0 +1,39 @@
+{
+	"schemaVersion": 1,
+	"id": "primordia",
+	"version": "1.0.2",
+	"name": "primordia",
+	"description": "Embark on an adventure of endless mystery and vengeance with Primordia, a mod that reimagines Minecraft into the epic journey it was meant to be.",
+	"authors": [
+		"Nebula Studios"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/"
+	},
+	"license": "ARR",
+	"icon": "assets/primordia/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"nebula.primordia.Primordia"
+		],
+		"fabric-datagen": [
+			"nebula.primordia.PrimordiaDataGenerator"
+		],
+		"client": [
+			"nebula.primordia.PrimordiaClient"
+		]
+	},
+	"mixins": [
+		"primordia.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.10",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}

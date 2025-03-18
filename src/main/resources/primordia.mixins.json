@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "nebula.primordia.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "ItemRendererMixin",
+    "PlayerEntityRendererMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "client": [
+  ]
+}

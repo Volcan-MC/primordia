@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "primordia:block/willow_slab"
+    },
+    "type=double": {
+      "model": "primordia:block/willow_planks"
+    },
+    "type=top": {
+      "model": "primordia:block/willow_slab_top"
+    }
+  }
+}

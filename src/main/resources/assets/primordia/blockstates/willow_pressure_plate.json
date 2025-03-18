@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "primordia:block/willow_pressure_plate_up"
+    },
+    "powered=true": {
+      "model": "primordia:block/pressure_plate_down"
+    }
+  }
+}

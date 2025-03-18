@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_right_open",
+  "textures": {
+    "bottom": "primordia:block/wood_types/willow/functional/willow_door_bottom",
+    "top": "primordia:block/wood_types/willow/functional/willow_door_top"
+  }
+}

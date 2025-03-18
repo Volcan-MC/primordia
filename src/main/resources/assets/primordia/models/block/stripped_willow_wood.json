@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "side": "primordia:block/wood_types/willow/stripped_willow_wood",
+    "end": "primordia:block/wood_types/willow/stripped_willow_wood"
+  }
+}

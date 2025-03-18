@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/pressure_plate_down",
+  "textures": {
+    "texture": "primordia:block/wood_types/willow/willow_planks"
+  }
+}

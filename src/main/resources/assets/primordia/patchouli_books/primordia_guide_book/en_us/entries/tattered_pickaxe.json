@@ -1,0 +1,11 @@
+{
+  "name": "Tattered Pickaxe",
+  "icon": "primordia:tattered_pickaxe",
+  "category": "primordia:starter",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A Basic pickaxe, strong but can easily be broken (Randomly breaks when mining but also has durability)."
+    }
+  ]
+}

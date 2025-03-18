@@ -1,0 +1,11 @@
+{
+  "name": "Broken Sword",
+  "icon": "primordia:broken_sword",
+  "category": "primordia:starter",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A Basic Starter Sword which can be used as a Shield whilst still dealing low damage with a slight chance to apply the bleeding effect to the user (1 in 25)"
+    }
+  ]
+}

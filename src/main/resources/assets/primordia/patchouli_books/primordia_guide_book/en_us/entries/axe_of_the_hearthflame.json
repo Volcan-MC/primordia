@@ -1,0 +1,11 @@
+{
+  "name": "HearthFlame Axe",
+  "icon": "minecraft:netherite_axe",
+  "category": "primordia:the_gods",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A Blaze of glory, where fire reaches the hand. Like an infection unleashing a flame brighter than most through the veins of the worthy adversary they deem righteous to wield it's power."
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "StormWeaver",
+  "icon": "primordia:stormweaver",
+  "category": "primordia:the_gods",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The Blade found in the highest Peaks of the sky being carried by the fastest of bolts. Question is what brought it here? and why is it here? All we know is the only way to end the Shattered sky is using a Storm Altar (recipe on the side)"
+    }
+  ]
+}
