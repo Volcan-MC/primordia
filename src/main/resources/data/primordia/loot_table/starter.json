@@ -5,72 +5,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:chest",
-          "functions": [
-            {
-              "function": "minecraft:set_components",
-              "components": {
-                "minecraft:rarity": "rare",
-                "minecraft:container": [
-                  {
-                    "slot": 6,
-                    "item": {
-                      "id": "minecraft:leather_boots"
-                    }
-                  },
-                  {
-                    "slot": 5,
-                    "item": {
-                      "id": "minecraft:leather_chestplate"
-                    }
-                  },
-                  {
-                    "slot": 4,
-                    "item": {
-                      "id": "minecraft:carrot_on_a_stick"
-                    }
-                  },
-                  {
-                    "slot": 3,
-                    "item": {
-                      "id": "minecraft:book"
-                    }
-                  },
-                  {
-                    "slot": 2,
-                    "item": {
-                      "id": "minecraft:compass"
-                    }
-                  },
-                  {
-                    "slot": 1,
-                    "item": {
-                      "id": "primordia:tattered_pickaxe"
-                    }
-                  },
-                  {
-                    "slot": 0,
-                    "item": {
-                      "id": "primordia:broken_sword"
-                    }
-                  }
-                ],
-                "minecraft:fire_resistant": {}
-              },
-              "conditions": []
-            },
-            {
-              "function": "minecraft:set_name",
-              "name": {
-                "text": "Starter Equipment"
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:alternatives",
-          "children": [],
-          "functions": []
+          "name": "primordia:starter_pouch"
         }
       ]
     }
