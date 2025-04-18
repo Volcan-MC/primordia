@@ -1,6 +1,8 @@
 package nebula.primordia.item.custom;
 
 import nebula.primordia.enchantment.ModEnchantments;
+import nebula.primordia.item.ModItemComponents;
+import nebula.primordia.item.ModItems;
 import net.minecraft.component.type.AttributeModifierSlot;
 import net.minecraft.component.type.AttributeModifiersComponent;
 import net.minecraft.enchantment.Enchantment;
@@ -21,6 +23,7 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
+import net.minecraft.util.UseAction;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
@@ -30,7 +33,6 @@ import java.util.List;
 public class ReverbiumGauntletItem extends SwordItem {
 
     public ReverbiumGauntletItem(ToolMaterial toolMaterial, Settings settings) {
-
         super(toolMaterial, settings);
     }
     public static AttributeModifiersComponent createAttributeModifiers(ToolMaterial material, int baseAttackDamage, float attackSpeed) {
@@ -49,9 +51,20 @@ public class ReverbiumGauntletItem extends SwordItem {
                 )
                 .build();
     }
+    private int getDashCap(ItemStack stack) {
+        if (stack.get(ModItemComponents.DASH_CAP) != null) {
+            return stack.get(ModItemComponents.DASH_CAP);
+        } else {
+            return 3;
+        }
 
+    }
+    private void setDashCap(ItemStack stack, int value) {
+        stack.set(ModItemComponents.DASH_CAP,value);
+    }
 
-    private void applyDashMovement(LivingEntity user) {
+    private void applyDashMovement(LivingEntity user,ItemStack stack) {
+
         float yaw = user.getYaw();
         float pitch = user.getPitch();
         Vec3d direction = Vec3d.fromPolar(pitch, yaw).normalize().multiply(3.0);
@@ -59,23 +72,28 @@ public class ReverbiumGauntletItem extends SwordItem {
         if (user.isOnGround()) {
             user.move(MovementType.SELF, new Vec3d(0.0, 1.2, 0.0));
         }
+        if (getDashCap(stack) >= 2) {
+            setDashCap(stack,0);
+            ((PlayerEntity)user).getItemCooldownManager().set(this,250);
+        } else  {
+            setDashCap(stack,getDashCap(stack) + 1);
+        }
     }
     public static boolean hasEnchantment(ItemStack stack, RegistryKey<Enchantment> enchantment) {
         return stack.getEnchantments().getEnchantments().toString().
                 contains(enchantment.getValue().toString());
     }
-    public static void SonicDashTrail(ItemStack stack, PlayerEntity user, double radius) {
+    public void sonicDashTrail(ItemStack stack, PlayerEntity user, double radius) {
         World world = user.getWorld();
-        if (world instanceof ServerWorld serverWorld && !hasEnchantment(stack, ModEnchantments.PROPULSION) ) {
+
+        if (world instanceof ServerWorld serverWorld && hasEnchantment(stack, ModEnchantments.PROPULSION ) && !user.getItemCooldownManager().isCoolingDown(this)) {
             float pitch = user.getPitch();
             float yaw = user.getYaw();
             Vec3d playerPos = user.getPos();
             double x = -Math.sin(Math.toRadians(yaw)) * Math.cos(Math.toRadians(pitch));
             double y = -Math.sin(Math.toRadians(pitch));
             double z = Math.cos(Math.toRadians(yaw)) * Math.cos(Math.toRadians(pitch));
-
             Vec3d direction = new Vec3d(x, y, z).normalize();
-
             for (int i = 1; i <= radius ; i++) {
                 Vec3d particlePos = playerPos.add(direction.multiply(i));
                 serverWorld.spawnParticles(ParticleTypes.SONIC_BOOM,
@@ -96,43 +114,67 @@ public class ReverbiumGauntletItem extends SwordItem {
                 }
 
             }
-
-        } else {
-
-
-
-
+            if (getDashCap(stack) >= 2) {
+                setDashCap(stack,0);
+                user.getItemCooldownManager().set(this,250);
+            } else  {
+                setDashCap(stack,getDashCap(stack) + 1);
+            }
         }
 
     }
 
     @Override
-    public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-//        entity.damage(entity.getRecentDamageSource().getAttacker().getDamageSources().playerAttack(user),(float)user.getAttributes().getValue(EntityAttributes.GENERIC_ATTACK_DAMAGE));
+    public int getMaxUseTime(ItemStack stack, LivingEntity user) {
+        return 78000;
+    }
 
-        user.swingHand(Hand.OFF_HAND);
-        return super.use(world, user, hand);
+    @Override
+    public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
+        ItemStack stack = user.getStackInHand(hand);
+
+        if (hasEnchantment(stack, ModEnchantments.PROPULSION) && !user.getItemCooldownManager().isCoolingDown(this)) {
+            user.setCurrentHand(hand);
+            return TypedActionResult.consume(stack);
+        } else {
+            if (user.getOffHandStack().isOf(ModItems.REVERBIUM_GAUNTLET)) {
+                user.swingHand(Hand.OFF_HAND);
+            }
+            return TypedActionResult.pass(stack);
+        }
+    }
+
+    @Override
+    public void onStoppedUsing(ItemStack stack, World world, LivingEntity user, int remainingUseTicks) {
+        if (user.isSneaking()) {
+            sonicDashTrail(stack, (PlayerEntity) user, 20);
+        } else {
+            applyDashMovement(user,stack);
+            ((PlayerEntity)user).useRiptide(20,4,stack);
+        }
+        super.onStoppedUsing(stack, world, user, remainingUseTicks);
     }
 
 
     @Override
+    public UseAction getUseAction(ItemStack stack) {
+        if (hasEnchantment(stack,ModEnchantments.PROPULSION)) {
+            return UseAction.BOW;
+        } else {
+            return UseAction.NONE;
+        }
+    }
+
+    @Override
     public ActionResult useOnEntity(ItemStack stack, PlayerEntity user, LivingEntity entity, Hand hand) {
-        World world = user.getWorld();
-        user.attack(entity);
-        user.spawnSweepAttackParticles();
-        user.swingHand(Hand.OFF_HAND);
-        world.playSound(
-                null,
-                user.getX(),
-                user.getY(),
-                user.getZ(),
-                SoundEvents.ENTITY_PLAYER_ATTACK_SWEEP,
-                SoundCategory.NEUTRAL,
-                1F,
-                1F / (world.getRandom().nextFloat() * 0.4F + 0.8F)
-        );
-
-
+        if (user.getOffHandStack().isOf(ModItems.REVERBIUM_GAUNTLET) && !hasEnchantment(user.getOffHandStack(),ModEnchantments.PROPULSION)) {
+            World world = user.getWorld();
+            user.attack(entity);
+            user.spawnSweepAttackParticles();
+            user.swingHand(Hand.OFF_HAND);
+            world.playSound(null, user.getX(), user.getY(), user.getZ(), SoundEvents.ENTITY_PLAYER_ATTACK_SWEEP, SoundCategory.NEUTRAL, 1F, 1F / (world.getRandom().nextFloat() * 0.4F + 0.8F)
+            );
+        }
         return super.useOnEntity(stack, user, entity, hand);
     }
 }

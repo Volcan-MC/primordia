@@ -1,10 +1,10 @@
 package nebula.primordia.item;
 
+import nebula.primordia.Primordia;
 import nebula.primordia.block.ModBlocks;
 import nebula.primordia.entity.ModEntities;
 import nebula.primordia.item.custom.*;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import nebula.primordia.Primordia;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -78,7 +78,7 @@ public class ModItems {
 
     public static final Item REVERBIUM_GAUNTLET = registerItem("reverbium_gauntlet",
             new ReverbiumGauntletItem(ModToolMaterials.TATTERED, new Item.Settings()
-                    .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.TATTERED, 4, -2.6f)).rarity(Rarity.UNCOMMON)));
+                    .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.TATTERED, 4, -2.6f)).rarity(Rarity.UNCOMMON).component(ModItemComponents.DASH_CAP,0)));
 
 
 
@@ -145,7 +145,7 @@ public class ModItems {
     public static final Item SURGE_SPAWN_EGG = registerItem("surge_spawn_egg",
             new SpawnEggItem(ModEntities.SURGE, 1001033, 7237230, new Item.Settings()));
 
-    public static final Item SURGE_CHARGE = registerItem("surge_charge", new SurgeChargeItem(new Item.Settings().rarity(Rarity.UNCOMMON)));
+    //public static final Item SURGE_CHARGE = registerItem("surge_charge", new SurgeChargeItem(new Item.Settings().rarity(Rarity.UNCOMMON)));
 
     public static final Item STORM_TRIAL_KEY = registerItem("storm_trial_key", new Item(new Item.Settings()));
 

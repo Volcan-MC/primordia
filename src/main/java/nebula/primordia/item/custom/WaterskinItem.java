@@ -1,7 +1,6 @@
 package nebula.primordia.item.custom;
 
 import nebula.primordia.effect.ModEffects;
-import nebula.primordia.item.ModItems;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;

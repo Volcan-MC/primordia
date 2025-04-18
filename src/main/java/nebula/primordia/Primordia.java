@@ -4,16 +4,15 @@ import nebula.primordia.block.ModBlocks;
 import nebula.primordia.block.entity.ModBlockEntities;
 import nebula.primordia.effect.ModEffects;
 import nebula.primordia.enchantment.ModEnchantmentEffects;
-import nebula.primordia.enchantment.ModEnchantments;
 import nebula.primordia.entity.ModEntities;
 import nebula.primordia.entity.custom.SurgeEntity;
+import nebula.primordia.item.ModItemComponents;
 import nebula.primordia.item.ModItemGroups;
 import nebula.primordia.item.ModItems;
 import nebula.primordia.potion.ModPotions;
 import nebula.primordia.recipe.ModRecipes;
 import nebula.primordia.screen.ModScreenHandlers;
 import net.fabricmc.api.ModInitializer;
-
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.registry.FabricBrewingRecipeRegistryBuilder;
 import net.minecraft.item.Items;
@@ -40,7 +39,7 @@ public class Primordia implements ModInitializer {
 		ModRecipes.registerRecipes();
 		ModEntities.registerModEntities();
 		FabricDefaultAttributeRegistry.register(ModEntities.SURGE, SurgeEntity.createAttributes());
-
+		ModItemComponents.init();
 		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
 			builder.registerPotionRecipe(Potions.STRONG_SLOWNESS, Items.SNOW_BLOCK, ModPotions.HYPOTHERMIA_POTION);
 

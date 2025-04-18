@@ -8,8 +8,6 @@ import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.Direction;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.List;
-
 @FunctionalInterface
 public interface ImplementedInventory extends SidedInventory {
 

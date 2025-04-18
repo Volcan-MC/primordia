@@ -1,6 +1,5 @@
 package nebula.primordia.item.custom;
 
-import java.util.List;
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.entity.EquipmentSlot;
@@ -15,6 +14,8 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.UseAction;
 import net.minecraft.world.World;
+
+import java.util.List;
 
 public class BrokenSwordItem extends Item implements Equipment {
     public static final int field_30918 = 5;

@@ -2,7 +2,6 @@ package nebula.primordia.block.entity;
 
 import nebula.primordia.Primordia;
 import nebula.primordia.block.ModBlocks;
-import nebula.primordia.block.custom.ForgeBlock;
 import nebula.primordia.block.entity.custom.ForgeBlockEntity;
 import nebula.primordia.block.entity.custom.TableBlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
