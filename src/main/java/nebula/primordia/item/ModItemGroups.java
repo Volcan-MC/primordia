@@ -28,6 +28,7 @@ public class ModItemGroups {
                         entries.add(ModItems.STARTER_POUCH);
                         entries.add(ModItems.BASIC_WATERSKIN);
                         entries.add(ModBlocks.WILLOW_LOG);
+                        entries.add(ModBlocks.WILLOW_LEAVES);
                         entries.add(ModBlocks.WILLOW_WOOD);
                         entries.add(ModBlocks.STRIPPED_WILLOW_LOG);
                         entries.add(ModBlocks.STRIPPED_WILLOW_WOOD);
@@ -46,6 +47,18 @@ public class ModItemGroups {
                         entries.add(ModItems.COD_STICK);
                         entries.add(ModItems.COOKED_COD_STICK);
                         entries.add(ModItems.TROPICAL_FISH_STICK);
+                        entries.add(ModItems.SWORD_CAST_NORMAL);
+                        entries.add(ModItems.SWORD_CAST_LONGSWORD);
+                        entries.add(ModItems.SWORD_CAST_ZWEIHANDER);
+                        entries.add(ModItems.IRON_LONGSWORD);
+                        entries.add(ModItems.GOLD_LONGSWORD);
+                        entries.add(ModItems.DIAMOND_LONGSWORD);
+                        entries.add(ModItems.NETHERITE_LONGSWORD);
+                        entries.add(ModItems.SWORD_CAST_DAGGER);
+                        entries.add(ModItems.IRON_DAGGER);
+                        entries.add(ModItems.GOLD_DAGGER);
+                        entries.add(ModItems.DIAMOND_DAGGER);
+                        entries.add(ModItems.NETHERITE_DAGGER);
                     }).build());
 
     public static final ItemGroup PRIMORDIA_DECOR = Registry.register(Registries.ITEM_GROUP,

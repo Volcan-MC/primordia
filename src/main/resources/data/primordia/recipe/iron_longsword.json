@@ -1,0 +1,10 @@
+{
+  "type": "primordia:forge",
+  "ingredient": {
+    "item": "primordia:sword_cast_longsword"
+  },
+  "result": {
+    "count": 1,
+    "id": "primordia:iron_longsword"
+  }
+}

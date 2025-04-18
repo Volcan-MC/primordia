@@ -1,6 +1,7 @@
 package nebula.primordia.block;
 
 import nebula.primordia.Primordia;
+import nebula.primordia.block.custom.ForgeBlock;
 import nebula.primordia.block.custom.TableBlock;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.*;
@@ -37,7 +38,7 @@ public class ModBlocks {
             new CarpetBlock(AbstractBlock.Settings.create().strength(3f).requiresTool()));
 
     public static final Block FORGE = registerBlock("forge",
-            new Block(AbstractBlock.Settings.create().strength(3f).requiresTool()));
+            new ForgeBlock(AbstractBlock.Settings.create().strength(3f).requiresTool()));
 
     public static final Block FORGE_BRICKS = registerBlock("forge_bricks",
             new Block(AbstractBlock.Settings.create().strength(3f).requiresTool()));
@@ -51,7 +52,7 @@ public class ModBlocks {
     public static final Block WILLOW_LOG = registerBlock("willow_log",
             new Block(AbstractBlock.Settings.create().strength(4f).requiresTool().sounds(BlockSoundGroup.WOOD)));
     public static final Block WILLOW_LEAVES = registerBlock("willow_leaves",
-            new Block(AbstractBlock.Settings.create().strength(4f).requiresTool().sounds(BlockSoundGroup.WOOD)));
+            new LeavesBlock(AbstractBlock.Settings.create().strength(4f).requiresTool().sounds(BlockSoundGroup.CHERRY_LEAVES).nonOpaque()));
     public static final Block WILLOW_PLANKS = registerBlock("willow_planks",
             new Block(AbstractBlock.Settings.create().strength(4f).requiresTool().sounds(BlockSoundGroup.WOOD)));
     public static final Block WILLOW_WOOD = registerBlock("willow_wood",
@@ -76,6 +77,16 @@ public class ModBlocks {
 
     public static final Block FISH_STICK = registerBlock("fish_stick",
             new Block(AbstractBlock.Settings.create().strength(3f).requiresTool()));
+
+    public static final Block HEARTHFLAME_ALTAR = registerBlock("hearthflame_altar",
+            new Block(AbstractBlock.Settings.create().strength(3f).requiresTool().nonOpaque()));
+
+    public static final Block DEEPSLATE_SKIRT = registerBlock("chiseled_deepslate_dungeon_bricks",
+            new Block(AbstractBlock.Settings.create().strength(3f).requiresTool()));
+
+
+
+
 
 
 

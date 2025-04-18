@@ -20,15 +20,20 @@ public class ModEffects {
     public static final RegistryEntry<StatusEffect> FREEZING = registerStatusEffect("freezing",
             new FreezingEffect(StatusEffectCategory.NEUTRAL, 0x36ebab)
                     .addAttributeModifier(EntityAttributes.GENERIC_MOVEMENT_SPEED,
-                            Identifier.of(Primordia.MOD_ID, "bleed"), -1.5f,
+                            Identifier.of(Primordia.MOD_ID, "freezing"), -0.2f,
                             EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
 
     public static final RegistryEntry<StatusEffect> CLOAKING = registerStatusEffect("cloaking",
             new CloakingEffect(StatusEffectCategory.NEUTRAL, 0x36ebab)
                     .addAttributeModifier(EntityAttributes.GENERIC_MOVEMENT_SPEED,
-                            Identifier.of(Primordia.MOD_ID, "bleed"), 0.0f,
+                            Identifier.of(Primordia.MOD_ID, "cloaking"), 0.0f,
                             EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
 
+    public static final RegistryEntry<StatusEffect> ANONYMOUS = registerStatusEffect("anonymous",
+            new AnonymousEffect(StatusEffectCategory.NEUTRAL, 0x36ebab)
+                    .addAttributeModifier(EntityAttributes.GENERIC_MOVEMENT_SPEED,
+                            Identifier.of(Primordia.MOD_ID, "anonymous"), 0.0f,
+                            EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
 
     private static RegistryEntry<StatusEffect> registerStatusEffect(String name, StatusEffect statusEffect) {
         return Registry.registerReference(Registries.STATUS_EFFECT, Identifier.of(Primordia.MOD_ID, name), statusEffect);

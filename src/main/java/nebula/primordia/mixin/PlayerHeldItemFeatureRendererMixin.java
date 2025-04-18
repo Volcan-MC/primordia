@@ -42,6 +42,15 @@ public abstract class PlayerHeldItemFeatureRendererMixin<T extends PlayerEntity,
                 return;
             }
 
+            if ((entity.getMainArm() == Arm.RIGHT && arm == Arm.LEFT) && entity.getMainHandStack().getItem() == ModItems.PRIMORDIAL_LONGSWORD) {
+                ci.cancel();
+                return;
+            }
+            if ((entity.getMainArm() == Arm.LEFT && arm == Arm.RIGHT) && entity.getMainHandStack().getItem() == ModItems.PRIMORDIAL_LONGSWORD) {
+                ci.cancel();
+                return;
+            }
+
 
 
             super.renderItem(entity, stack, transformationMode, arm, matrices, vertexConsumers, light);

@@ -18,6 +18,7 @@
   "effect.primordia.bleed": "Bleeding",
   "effect.primordia.freezing": "Freezing",
   "effect.primordia.cloaking": "Cloaking",
+  "effect.primordia.anonymous": "Anonymous",
 
   "item.minecraft.potion.effect.hypothermia_potion": "Potion Of Hypothermia",
   "item.minecraft.splash_potion.effect.hypothermia_potion": "Splash Potion Of Hypothermia",
@@ -67,5 +68,46 @@
   "block.primordia.willow_button": "Willow Button",
 
   "tooltip.primordia.contents": "- Empty -",
-  "tooltip.primordia.waterskin": "Hold [Shift] To Show Contents"
+  "tooltip.primordia.waterskin": "Hold [Shift] To Show Contents",
+
+  "tooltip.primordia.swordcast.normal.shift": "Hold [Shift] To Show More Info",
+  "tooltip.primordia.swordcast.normal.shift.down": "Type: Sword",
+
+  "tooltip.primordia.swordcast.longsword.shift": "Hold [Shift] To Show More Info",
+  "tooltip.primordia.swordcast.longsword.shift.down": "Type: Longsword",
+
+  "tooltip.primordia.swordcast.zweihander.shift": "Hold [Shift] To Show More Info",
+  "tooltip.primordia.swordcast.zweihander.shift.down": "Type: Zweihander",
+
+  "tooltip.primordia.daggercast.shift.down": "Type: Dagger",
+
+  "item.primordia.sword_cast_normal": "Sword Cast",
+  "item.primordia.sword_cast_longsword": "Sword Cast",
+  "item.primordia.sword_cast_zweihander": "Sword Cast",
+  "item.primordia.sword_cast_dagger": "Dagger Cast",
+
+  "item.primordia.bottle_of_echoed_souls": "Bottle o' Echoed Souls",
+
+
+  "enchantment.primordia.propulsion": "Propulsion",
+  "enchantment.primordia.ice_aspect": "Chilling",
+  "enchantment.primordia.blazefoot": "Blaze Foot",
+  "enchantment.primordia.magnetism": "Magnetism",
+  "enchantment.primordia.vampirism": "Vampirism",
+  "enchantment.primordia.eject": "Ejection",
+
+  "item.primordia.surge_spawn_egg": "Surge Spawn Egg",  "item.primordia.reverbium_gauntlet": "Reverbium Gauntlet",
+  "entity.primordia.surge": "Surge",
+
+  "item.primordia.reverbium_ingot": "Reverbium Alloy",
+
+  "item.primordia.reverbium_helmet": "Reverbium Helmet",
+  "item.primordia.reverbium_chestplate": "Reverbium Chestplate",
+  "item.primordia.reverbium_leggings": "Reverbium Leggings",
+  "item.primordia.reverbium_boots": "Reverbium Boots",
+
+  "item.primordia.storm_trial_key": "Key Of The Keep",
+
+  "tooltip.primordia.hold_crouch_desc": "Hold [Left Shift] To View More Info",
+  "tooltip.primordia.description": "Allows the user to camouflage with their surroundings, rendering them completely invisible"
 }

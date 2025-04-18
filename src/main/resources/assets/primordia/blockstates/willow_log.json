@@ -1,7 +1,14 @@
 {
   "variants": {
-    "": {
+    "axis=x": {
+      "model": "primordia:block/willow_log"
+    },
+    "axis=y": {
+      "model": "primordia:block/willow_log"
+    },
+    "axis=z": {
       "model": "primordia:block/willow_log"
     }
   }
 }
+

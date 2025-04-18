@@ -14,6 +14,7 @@ public class CloakingEffect extends StatusEffect {
                 if(entity.isMobOrPlayer()) {
                     entity.setInvisible(true);
                     entity.setSilent(true);
+                    entity.setStuckArrowCount(0);
             return true;
         }
 

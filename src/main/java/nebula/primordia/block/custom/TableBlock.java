@@ -64,14 +64,14 @@ public class TableBlock extends BlockWithEntity implements BlockEntityProvider {
     protected ItemActionResult onUseWithItem(ItemStack stack, BlockState state, World world, BlockPos pos,
                                              PlayerEntity player, Hand hand, BlockHitResult hit) {
         if(world.getBlockEntity(pos) instanceof TableBlockEntity pedestalBlockEntity) {
-            if(pedestalBlockEntity.isEmpty() && !stack.isEmpty() && player.isInCreativeMode() && !player.getMainHandStack().isEmpty()) {
+            if(pedestalBlockEntity.isEmpty() && !stack.isEmpty() && !player.getMainHandStack().isEmpty()) {
                 pedestalBlockEntity.setStack(0, stack.copyWithCount(1));
                 world.playSound(player, pos, SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.BLOCKS, 1f, 2f);
                 stack.decrement(1);
 
                 pedestalBlockEntity.markDirty();
                 world.updateListeners(pos, state, state, 0);
-            } else if(stack.isEmpty() && !player.isSneaking() && player.isInCreativeMode() && player.getMainHandStack().isEmpty() ) {
+            } else if(stack.isEmpty() && !player.isSneaking() && player.getMainHandStack().isEmpty() ) {
 
                 ItemStack stackOnPedestal = pedestalBlockEntity.getStack(0);
                 player.setStackInHand(Hand.MAIN_HAND, stackOnPedestal);

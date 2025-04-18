@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "netherite_ingot",
+  "ingredients": [
+    {
+      "item": "minecraft:netherite_scrap"
+    },
+    {
+      "item": "minecraft:netherite_scrap"
+    },
+    {
+      "item": "minecraft:netherite_scrap"
+    },
+    {
+      "item": "minecraft:netherite_scrap"
+    },
+    {
+      "item": "primordia:bottle_of_echoed_souls"
+    },
+    {
+      "item": "primordia:bottle_of_echoed_souls"
+    },
+    {
+      "item": "primordia:bottle_of_echoed_souls"
+    },
+    {
+      "item": "primordia:bottle_of_echoed_souls"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "primordia:reverbium_ingot"
+  }
+}

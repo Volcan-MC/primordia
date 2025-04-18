@@ -11,7 +11,7 @@ import net.minecraft.util.Identifier;
 
 public class ModPotions {
     public static final RegistryEntry<Potion> HYPOTHERMIA_POTION = registerPotion("hypothermia_potion",
-            new Potion(new StatusEffectInstance(ModEffects.FREEZING, 1200, 0)));
+            new Potion(new StatusEffectInstance(ModEffects.FREEZING, 960, 0)));
 
 
     private static RegistryEntry<Potion> registerPotion(String name, Potion potion) {

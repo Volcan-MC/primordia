@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "X": {
+      "item": "primordia:reverbium_ingot"
+    },
+    "L": {
+      "item": "minecraft:leather"
+    },
+    "C": {
+      "item": "minecraft:iron_sword"
+    },
+    "#": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "pattern": [
+    "#CC",
+    "LXC",
+    "XL#"
+  ],
+  "result": {
+    "count": 1,
+    "id": "primordia:reverbium_gauntlet"
+  }
+}

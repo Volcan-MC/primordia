@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "O": {
+      "item": "minecraft:sculk"
+    }
+  },
+  "pattern": [
+    "OOO",
+    "OGO",
+    "OOO"
+  ],
+  "result": {
+    "count": 4,
+    "id": "minecraft:echo_shard"
+  }
+}

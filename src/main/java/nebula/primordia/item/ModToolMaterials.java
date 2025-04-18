@@ -19,6 +19,7 @@ public enum ModToolMaterials implements ToolMaterial {
 
 
 
+
     private final TagKey<Block> inverseTag;
     private final int itemDurability;
     private final float miningSpeed;

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "X": {
+      "item": "primordia:diamond_sword_head"
+    },
+    "~": {
+      "item": "primordia:diamond_reinforcer"
+    }
+  },
+  "pattern": [
+    "X",
+    "~",
+    "#"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:diamond_sword"
+  }
+}

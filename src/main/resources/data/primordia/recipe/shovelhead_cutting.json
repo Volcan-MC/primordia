@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:stonecutting",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "minecraft:crying_obsidian"
+    },
+    "S": {
+      "item": "stone"
+    },
+    "?": {
+      "item": "minecraft:amethyst_shard"
+    }
+  },
+  "pattern": [
+    "#?#",
+    "?S?",
+    "#?#"
+  ],
+  "ingredient": {
+    "item": "diamond"
+  },
+  "result": {
+    "count": 1,
+    "id": "primordia:diamond_shovel_head"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:smooth_stone"
+    },
+    "I": {
+      "item": "minecraft:deepslate"
+    },
+    "X": {
+      "item": "minecraft:blast_furnace"
+    },
+    "S": {
+      "item": "minecraft:spruce_log"
+    }
+  },
+  "pattern": [
+    "SIS",
+    "SXS",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "id": "primordia:forge"
+  }
+}
