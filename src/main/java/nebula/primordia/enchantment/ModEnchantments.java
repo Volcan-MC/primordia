@@ -3,6 +3,7 @@ package nebula.primordia.enchantment;
 import nebula.primordia.Primordia;
 import nebula.primordia.enchantment.custom.IceAspectEnchantmentEffect;
 import nebula.primordia.enchantment.custom.PropulsionEnchantmentEffect;
+import nebula.primordia.util.ModTags;
 import net.minecraft.component.EnchantmentEffectComponentTypes;
 import net.minecraft.component.type.AttributeModifierSlot;
 import net.minecraft.enchantment.Enchantment;
@@ -37,8 +38,7 @@ public class ModEnchantments {
         var items = registerable.getRegistryLookup(RegistryKeys.ITEM);
 
         register(registerable, PROPULSION, Enchantment.builder(Enchantment.definition(
-                        items.getOrThrow(ItemTags.WEAPON_ENCHANTABLE),
-                        items.getOrThrow(ItemTags.SWORD_ENCHANTABLE),
+                        items.getOrThrow(ModTags.Items.GAUNTLET_ENCHANTMENT_TAG),
                         15,
                         1,
                         Enchantment.leveledCost(5, 7),

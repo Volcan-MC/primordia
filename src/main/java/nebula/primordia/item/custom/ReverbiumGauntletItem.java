@@ -68,7 +68,7 @@ public class ReverbiumGauntletItem extends SwordItem {
         float yaw = user.getYaw();
         float pitch = user.getPitch();
         Vec3d direction = Vec3d.fromPolar(pitch, yaw).normalize().multiply(3.0);
-        user.addVelocity(direction.x, 0.05, direction.z);
+        user.addVelocity(direction.x, direction.y / 2, direction.z);
         if (user.isOnGround()) {
             user.move(MovementType.SELF, new Vec3d(0.0, 1.2, 0.0));
         }
