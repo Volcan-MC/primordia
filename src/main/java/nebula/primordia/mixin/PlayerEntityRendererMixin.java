@@ -5,6 +5,7 @@ import nebula.primordia.effect.ModEffects;
 import nebula.primordia.item.custom.LongswordItem;
 import nebula.primordia.item.custom.PrimordialLongswordItem;
 import nebula.primordia.item.custom.StormWeaverItem;
+import nebula.primordia.util.Cloakable;
 import net.minecraft.client.model.ModelPart;
 import net.minecraft.client.network.AbstractClientPlayerEntity;
 import net.minecraft.client.render.VertexConsumerProvider;
@@ -54,7 +55,7 @@ public abstract class PlayerEntityRendererMixin {
 
     @Inject(method = "renderArm", at = @At("HEAD"), cancellable = true)
     private void renderArm(MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, AbstractClientPlayerEntity player, ModelPart arm, ModelPart sleeve, CallbackInfo ci) {
-        if (player.hasStatusEffect(ModEffects.CLOAKING)) {
+        if (((Cloakable)player).primordia$isCloaked()) {
             ci.cancel();
         }
     }
@@ -62,7 +63,7 @@ public abstract class PlayerEntityRendererMixin {
 
     @Inject(method = "render(Lnet/minecraft/client/network/AbstractClientPlayerEntity;FFLnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider;I)V", at = @At("HEAD"), cancellable = true)
     private void render(AbstractClientPlayerEntity player, float yaw, float tickDelta, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int light, CallbackInfo callbackInfo) {
-        if (player.hasStatusEffect(ModEffects.CLOAKING)) {
+        if (((Cloakable)player).primordia$isCloaked()) {
             callbackInfo.cancel();
         }
 

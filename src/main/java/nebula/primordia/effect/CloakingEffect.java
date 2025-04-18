@@ -1,8 +1,10 @@
 package nebula.primordia.effect;
 
+import nebula.primordia.util.Cloakable;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
+import net.minecraft.entity.player.PlayerEntity;
 
 public class CloakingEffect extends StatusEffect {
     public CloakingEffect(StatusEffectCategory category, int color) {
@@ -15,11 +17,13 @@ public class CloakingEffect extends StatusEffect {
                     entity.setInvisible(true);
                     entity.setSilent(true);
                     entity.setStuckArrowCount(0);
-            return true;
-        }
+                    return true;
+                }
+
 
         return super.applyUpdateEffect(entity, amplifier);
     }
+
 
     @Override
     public boolean canApplyUpdateEffect(int duration, int amplifier) {

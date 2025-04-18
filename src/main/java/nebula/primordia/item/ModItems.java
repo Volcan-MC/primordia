@@ -20,7 +20,7 @@ public class ModItems {
     public static final Item BASIC_WATERSKIN = registerItem("basic_waterskin", new WaterskinItem(new Item.Settings()));
 
 
-    public static final Item CLOAKING_TALISMAN = registerItem("cloaking_talisman", new TalismanItem(new Item.Settings().rarity(Rarity.EPIC)));
+    public static final Item CLOAKING_TALISMAN = registerItem("cloaking_talisman", new TalismanItem(new Item.Settings().rarity(Rarity.EPIC).maxCount(1)));
 
         public static final Item BROKEN_SWORD = registerItem("broken_sword", new BrokenSwordItem(new Item.Settings()));
 
