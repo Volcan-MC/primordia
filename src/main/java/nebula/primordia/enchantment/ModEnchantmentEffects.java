@@ -2,10 +2,11 @@ package nebula.primordia.enchantment;
 
 import com.mojang.serialization.MapCodec;
 import nebula.primordia.Primordia;
-import nebula.primordia.enchantment.custom.EjectEnchantmentEffect;
+
 import nebula.primordia.enchantment.custom.IceAspectEnchantmentEffect;
 import nebula.primordia.enchantment.custom.MagnetismEnchantmentEffect;
 import nebula.primordia.enchantment.custom.PropulsionEnchantmentEffect;
+import nebula.primordia.enchantment.custom.VampirismEnchantmentEffect;
 import net.minecraft.enchantment.effect.EnchantmentEntityEffect;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -21,12 +22,11 @@ public class ModEnchantmentEffects {
     public static final MapCodec<? extends EnchantmentEntityEffect> MAGNETISM =
             registerEntityEffect("magnetism", MagnetismEnchantmentEffect.CODEC);
 
-    public static final MapCodec<? extends EnchantmentEntityEffect> EJECT =
-            registerEntityEffect("eject", EjectEnchantmentEffect.CODEC);
+
 
     public static final MapCodec<? extends EnchantmentEntityEffect> VAMPIRISM =
-            registerEntityEffect("vampirism", EjectEnchantmentEffect.CODEC);
-
+            registerEntityEffect("vampirism", VampirismEnchantmentEffect.CODEC);
+//VOLCAN FIX THIS
 
     private static MapCodec<? extends EnchantmentEntityEffect> registerEntityEffect(String name,
                                                                                     MapCodec<? extends EnchantmentEntityEffect> codec) {
