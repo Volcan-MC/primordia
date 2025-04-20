@@ -23,7 +23,7 @@ public class TalismanItem extends Item {
         user.addStatusEffect(new StatusEffectInstance(ModEffects.CLOAKING,300 , 1));
         if (world instanceof ServerWorld serverWorld) {
 
-                ((Cloakable) user).primordia$setCloaked(true);
+            ((Cloakable) user).primordia$setCloaked(true);
 
         }
 
