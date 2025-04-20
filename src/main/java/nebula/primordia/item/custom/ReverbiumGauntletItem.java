@@ -13,7 +13,7 @@ import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.SwordItem;
+import net.minecraft.item.ShovelItem;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.registry.RegistryKey;
@@ -31,7 +31,7 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class ReverbiumGauntletItem extends SwordItem {
+public class ReverbiumGauntletItem extends ShovelItem {
 
     public ReverbiumGauntletItem(ToolMaterial toolMaterial, Settings settings) {
         super(toolMaterial, settings);
