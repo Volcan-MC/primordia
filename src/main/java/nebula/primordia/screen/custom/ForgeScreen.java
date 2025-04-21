@@ -11,7 +11,7 @@ import net.minecraft.util.Identifier;
 
 public class ForgeScreen extends HandledScreen<ForgeScreenHandler> {
     private static final Identifier GUI_TEXTURE =
-            Identifier.of(Primordia.MOD_ID, "textures/gui/forge/forge_guii.png");
+            Identifier.of(Primordia.MOD_ID, "textures/gui/forge/forge_gui.png");
     private static final Identifier ARROW_TEXTURE =
             Identifier.of(Primordia.MOD_ID, "textures/gui/arrow_progress.png");
 

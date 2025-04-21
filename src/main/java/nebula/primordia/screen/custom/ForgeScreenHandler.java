@@ -19,7 +19,7 @@ public class ForgeScreenHandler extends ScreenHandler {
     public final ForgeBlockEntity blockEntity;
 
     public ForgeScreenHandler(int syncId, PlayerInventory inventory, BlockPos pos) {
-        this(syncId, inventory, inventory.player.getWorld().getBlockEntity(pos), new ArrayPropertyDelegate(2));
+        this(syncId, inventory, inventory.player.getWorld().getBlockEntity(pos), new ArrayPropertyDelegate(3));
     }
 
     public ForgeScreenHandler(int syncId, PlayerInventory playerInventory,
@@ -30,7 +30,7 @@ public class ForgeScreenHandler extends ScreenHandler {
         this.propertyDelegate = arrayPropertyDelegate;
 
         this.addSlot(new Slot(inventory, 0, 54, 34));
-        this.addSlot(new Slot(inventory, 0, 27, 34));
+        this.addSlot(new Slot(inventory, 2, 27, 34));
         this.addSlot(new Slot(inventory, 1, 104, 34));
 
         addPlayerInventory(playerInventory);
@@ -55,7 +55,7 @@ public class ForgeScreenHandler extends ScreenHandler {
     public ItemStack quickMove(PlayerEntity player, int invSlot) {
         ItemStack newStack = ItemStack.EMPTY;
         Slot slot = this.slots.get(invSlot);
-        if (slot != null && slot.hasStack()) {
+        if (slot.hasStack()) {
             ItemStack originalStack = slot.getStack();
             newStack = originalStack.copy();
             if (invSlot < this.inventory.size()) {

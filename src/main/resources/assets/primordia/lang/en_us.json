@@ -2,35 +2,10 @@
   "item.primordia.broken_sword": "Broken Sword",
   "item.primordia.tattered_pickaxe": "Tattered Pickaxe",
   "item.primordia.cloaking_talisman": "Cloaking Talisman",
-
-  "advancements.primordia.starterkit.title": "The Primordia Experience",
-  "advancements.primordia.starterkit.desc": "Obtained the Primordia Starter Equipment",
-
+  "item.primordia.flint_knife": "Flint Knife",
+  "item.primordia.flint_spear": "Fishing Spear",
   "item.primordia.starter_pouch": "Starter Pouch",
-
   "item.primordia.stormweaver": "Stormweaver",
-
-  "tooltip.primordia.stormweaver.shift_down": "The Blade Of A thousand volts, capable of even splitting the sky into pieces",
-  "tooltip.primordia.stormweaver": "Press [Shift] To Show More Info",
-
-  "tooltip.primordia.weapon.twohanded": "2-Handed",
-
-  "effect.primordia.bleed": "Bleeding",
-  "effect.primordia.freezing": "Freezing",
-  "effect.primordia.cloaking": "Cloaking",
-  "effect.primordia.anonymous": "Anonymous",
-
-  "item.minecraft.potion.effect.hypothermia_potion": "Potion Of Hypothermia",
-  "item.minecraft.splash_potion.effect.hypothermia_potion": "Splash Potion Of Hypothermia",
-  "item.minecraft.lingering_potion.effect.hypothermia_potion": "Lingering Potion Of Hypothermia",
-
-  "item.minecraft.tipped_arrow.effect.hypothermia_potion": "Arrow Of Hypothermia",
-
-  "itemgroup.primordia.primordia": "Primordia",
-  "itemgroup.primordia.primordia.decor": "Primordia Decor",
-
-  "block.primordia.stone_table": "Stone Table",
-
   "item.primordia.tattered_cloth": "Tattered Cloth",
   "item.primordia.tattered_axe": "Tattered Axe",
   "item.primordia.survivors_compass": "Survivor's Compass",
@@ -38,23 +13,50 @@
   "item.primordia.survivors_chestplate": "Survivor's Chestplate",
   "item.primordia.survivors_leggings": "Survivor's Leggings",
   "item.primordia.survivors_boots": "Survivor's Boots",
-
-  "item.primordia.basic_waterskin": "Basic Waterskin",
-
-  "item.primordia.flint_knife": "Flint Knife",
-  "item.primordia.flint_spear": "Fishing Spear",
-
   "item.primordia.salmon_stick": "Salmon On A Stick",
   "item.primordia.cod_stick": "Cod On A Stick",
   "item.primordia.tropical_fish_stick": "Tropical Fish On A Stick",
-
   "item.primordia.cooked_salmon_stick": "Cooked Salmon On A Stick",
   "item.primordia.cooked_cod_stick": "Cooked Cod On A Stick",
+  "item.primordia.sword_cast_normal": "Sword Cast",
+  "item.primordia.sword_cast_longsword": "Sword Cast",
+  "item.primordia.sword_cast_zweihander": "Sword Cast",
+  "item.primordia.sword_cast_dagger": "Dagger Cast",
+  "item.primordia.bottle_of_echoed_souls": "Bottle o' Echoed Souls",
+  "item.primordia.basic_waterskin": "Basic Waterskin",
+  "item.primordia.reverbium_ingot": "Reverbium Alloy",
+  "item.primordia.reverbium_helmet": "Reverbium Helmet",
+  "item.primordia.reverbium_chestplate": "Reverbium Chestplate",
+  "item.primordia.reverbium_leggings": "Reverbium Leggings",
+  "item.primordia.reverbium_boots": "Reverbium Boots",
+  "item.primordia.storm_trial_key": "Key Of The Keep",
+  "item.primordia.surge_spawn_egg": "Surge Spawn Egg",
+  "item.primordia.reverbium_gauntlet": "Reverbium Gauntlet",
+  "item.primordia.iron_dagger": "Iron Dagger",
+  "item.primordia.gold_dagger": "Gold Dagger",
+  "item.primordia.diamond_dagger": "Diamond Dagger",
+  "item.primordia.netherite_dagger": "Netherite Dagger",
 
+  "item.minecraft.potion.effect.hypothermia_potion": "Potion Of Hypothermia",
+  "item.minecraft.splash_potion.effect.hypothermia_potion": "Splash Potion Of Hypothermia",
+  "item.minecraft.lingering_potion.effect.hypothermia_potion": "Lingering Potion Of Hypothermia",
+  "item.minecraft.tipped_arrow.effect.hypothermia_potion": "Arrow Of Hypothermia",
+
+  "itemgroup.primordia.primordia": "Primordia",
+  "itemgroup.primordia.primordia.decor": "Primordia Decor",
+
+  "advancements.primordia.starterkit.title": "The Primordia Experience",
+  "advancements.primordia.starterkit.desc": "Obtained the Primordia Starter Equipment",
+
+  "effect.primordia.bleed": "Bleeding",
+  "effect.primordia.freezing": "Freezing",
+  "effect.primordia.cloaking": "Cloaking",
+  "effect.primordia.anonymous": "Anonymous",
+
+  "block.primordia.stone_table": "Stone Table",
   "block.primordia.wooden_stool": "Wooden Stool",
   "block.primordia.forge": "Forge",
   "block.primordia.forge_bricks": "Forge Bricks",
-
   "block.primordia.willow_log": "Willow Log",
   "block.primordia.willow_wood": "Willow Wood",
   "block.primordia.stripped_willow_log": "Stripped Willow Log",
@@ -69,25 +71,18 @@
 
   "tooltip.primordia.contents": "- Empty -",
   "tooltip.primordia.waterskin": "Hold [Shift] To Show Contents",
-
   "tooltip.primordia.swordcast.normal.shift": "Hold [Shift] To Show More Info",
   "tooltip.primordia.swordcast.normal.shift.down": "Type: Sword",
-
   "tooltip.primordia.swordcast.longsword.shift": "Hold [Shift] To Show More Info",
   "tooltip.primordia.swordcast.longsword.shift.down": "Type: Longsword",
-
   "tooltip.primordia.swordcast.zweihander.shift": "Hold [Shift] To Show More Info",
   "tooltip.primordia.swordcast.zweihander.shift.down": "Type: Zweihander",
-
   "tooltip.primordia.daggercast.shift.down": "Type: Dagger",
-
-  "item.primordia.sword_cast_normal": "Sword Cast",
-  "item.primordia.sword_cast_longsword": "Sword Cast",
-  "item.primordia.sword_cast_zweihander": "Sword Cast",
-  "item.primordia.sword_cast_dagger": "Dagger Cast",
-
-  "item.primordia.bottle_of_echoed_souls": "Bottle o' Echoed Souls",
-
+  "tooltip.primordia.hold_crouch_desc": "Hold [Left Shift] To View More Info",
+  "tooltip.primordia.description": "Allows the user to camouflage with their surroundings, rendering them completely invisible",
+  "tooltip.primordia.stormweaver.shift_down": "The Blade Of A thousand volts, capable of even splitting the sky into pieces",
+  "tooltip.primordia.stormweaver": "Press [Shift] To Show More Info",
+  "tooltip.primordia.weapon.twohanded": "2-Handed",
 
   "enchantment.primordia.propulsion": "Propulsion",
   "enchantment.primordia.ice_aspect": "Chilling",
@@ -95,19 +90,5 @@
   "enchantment.primordia.magnetism": "Magnetism",
   "enchantment.primordia.vampirism": "Vampirism",
   "enchantment.primordia.eject": "Ejection",
-
-  "item.primordia.surge_spawn_egg": "Surge Spawn Egg",  "item.primordia.reverbium_gauntlet": "Reverbium Gauntlet",
-  "entity.primordia.surge": "Surge",
-
-  "item.primordia.reverbium_ingot": "Reverbium Alloy",
-
-  "item.primordia.reverbium_helmet": "Reverbium Helmet",
-  "item.primordia.reverbium_chestplate": "Reverbium Chestplate",
-  "item.primordia.reverbium_leggings": "Reverbium Leggings",
-  "item.primordia.reverbium_boots": "Reverbium Boots",
-
-  "item.primordia.storm_trial_key": "Key Of The Keep",
-
-  "tooltip.primordia.hold_crouch_desc": "Hold [Left Shift] To View More Info",
-  "tooltip.primordia.description": "Allows the user to camouflage with their surroundings, rendering them completely invisible"
+  "entity.primordia.surge": "Surge"
 }
