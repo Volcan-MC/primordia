@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "primordia:reverbium_ingot"
+    },
+    "S": {
+      "item": "minecraft:netherite_scrap"
+    },
+    "R": {
+      "item": "minecraft:recovery_compass"
+    },
+    "C": {
+      "item": "minecraft:calibrated_sculk_sensor"
+    }
+  },
+  "pattern": [
+    "#S#",
+    "SRS",
+    "#C#"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:diamond_block"
+  }
+}

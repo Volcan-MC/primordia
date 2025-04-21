@@ -24,9 +24,6 @@ public class ModEnchantments {
     public static final RegistryKey<Enchantment> MAGNETISM =
             RegistryKey.of(RegistryKeys.ENCHANTMENT, Identifier.of(Primordia.MOD_ID, "magnetism"));
 
-    public static final RegistryKey<Enchantment> EJECT =
-            RegistryKey.of(RegistryKeys.ENCHANTMENT, Identifier.of(Primordia.MOD_ID, "eject"));
-
     public static final RegistryKey<Enchantment> BLAZEFOOT =
             RegistryKey.of(RegistryKeys.ENCHANTMENT, Identifier.of(Primordia.MOD_ID, "blazefoot"));
 

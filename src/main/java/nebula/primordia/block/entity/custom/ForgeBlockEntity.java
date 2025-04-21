@@ -116,6 +116,7 @@ public class ForgeBlockEntity extends BlockEntity implements ExtendedScreenHandl
 
         ItemStack output = recipe.get().value().output();
         this.removeStack(INPUT_SLOT, 1);
+        this.removeStack(CAST_SLOT, 1);
         this.setStack(OUTPUT_SLOT, new ItemStack(output.getItem(),
                 this.getStack(OUTPUT_SLOT).getCount() + output.getCount()));
     }

@@ -13,13 +13,19 @@ import nebula.primordia.potion.ModPotions;
 import nebula.primordia.recipe.ModRecipes;
 import nebula.primordia.screen.ModScreenHandlers;
 import nebula.primordia.util.Cloakable;
+import nebula.primordia.util.ModLootTableModifiers;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
+import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.fabricmc.fabric.api.registry.FabricBrewingRecipeRegistryBuilder;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.potion.Potions;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.village.TradeOffer;
+import net.minecraft.village.TradedItem;
+import net.minecraft.village.VillagerProfession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -41,6 +47,9 @@ public class Primordia implements ModInitializer {
 		ModEnchantmentEffects.registerEnchantmentEffects();
 		ModRecipes.registerRecipes();
 		ModEntities.registerModEntities();
+
+		ModLootTableModifiers.modifyLootTables();
+
 		FabricDefaultAttributeRegistry.register(ModEntities.SURGE, SurgeEntity.createAttributes());
 		ModItemComponents.init();
 		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
@@ -54,6 +63,18 @@ public class Primordia implements ModInitializer {
 						((Cloakable) player).primordia$setCloaked(false);
 					}
 				}
+			});
+
+			TradeOfferHelper.registerVillagerOffers(VillagerProfession.TOOLSMITH, 1, factories -> {
+				factories.add((entity, random) -> new TradeOffer(
+						new TradedItem(Items.EMERALD, 3),
+						new ItemStack(ModItems.SWORD_CAST_NORMAL, 1), 7, 2, 0.04f));
+			});
+
+			TradeOfferHelper.registerVillagerOffers(VillagerProfession.TOOLSMITH, 3, factories -> {
+				factories.add((entity, random) -> new TradeOffer(
+						new TradedItem(Items.EMERALD, 9),
+						new ItemStack(ModItems.SWORD_CAST_LONGSWORD, 2), 7, 2, 0.04f));
 			});
 
 

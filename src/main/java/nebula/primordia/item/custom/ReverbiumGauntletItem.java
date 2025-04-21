@@ -25,6 +25,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.UseAction;
 import net.minecraft.util.math.Box;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
@@ -133,7 +134,7 @@ public class ReverbiumGauntletItem extends ShovelItem {
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         ItemStack stack = user.getStackInHand(hand);
 
-        if (hasEnchantment(stack, ModEnchantments.PROPULSION) && !user.getItemCooldownManager().isCoolingDown(this)) {
+        if (hasEnchantment(stack, ModEnchantments.PROPULSION) || hasEnchantment(stack,ModEnchantments.MAGNETISM)&& !user.getItemCooldownManager().isCoolingDown(this)) {
             user.setCurrentHand(hand);
             return TypedActionResult.consume(stack);
         } else {
@@ -146,11 +147,16 @@ public class ReverbiumGauntletItem extends ShovelItem {
 
     @Override
     public void onStoppedUsing(ItemStack stack, World world, LivingEntity user, int remainingUseTicks) {
-        if (user.isSneaking()) {
-            sonicDashTrail(stack, (PlayerEntity) user, 20);
-        } else {
-            applyDashMovement(user,stack);
-            ((PlayerEntity)user).useRiptide(20,4,stack);
+        if (hasEnchantment(stack, ModEnchantments.PROPULSION)) {
+            if (user.isSneaking()) {
+                sonicDashTrail(stack, (PlayerEntity) user, 20);
+            } else {
+                applyDashMovement(user,stack);
+                ((PlayerEntity)user).useRiptide(20,4,stack);
+            }
+        }
+        else if (hasEnchantment(stack,ModEnchantments.MAGNETISM)){
+
         }
         super.onStoppedUsing(stack, world, user, remainingUseTicks);
     }
@@ -158,16 +164,54 @@ public class ReverbiumGauntletItem extends ShovelItem {
 
     @Override
     public UseAction getUseAction(ItemStack stack) {
-        if (hasEnchantment(stack,ModEnchantments.PROPULSION)) {
+        if (hasEnchantment(stack,ModEnchantments.PROPULSION) || hasEnchantment(stack,ModEnchantments.MAGNETISM)) {
             return UseAction.BOW;
         } else {
             return UseAction.NONE;
         }
     }
 
+
+    @Override
+    public void usageTick(World world, LivingEntity user, ItemStack stack, int remainingUseTicks) {
+        if (hasEnchantment(stack,ModEnchantments.MAGNETISM) && user instanceof PlayerEntity player && !player.getItemCooldownManager().isCoolingDown(this)) {
+
+
+
+
+            if (world instanceof ServerWorld serverWorld) {
+                Vec3d playerPos = user.getPos();
+                serverWorld.spawnParticles(ParticleTypes.PORTAL,user.getX(),user.getY(),user.getZ(),10,2.5,2.5,2.5,0.5);
+
+                Box baseBox = user.getBoundingBox().expand(8);
+
+                List<LivingEntity> entities = serverWorld.getEntitiesByClass(LivingEntity.class,
+                        baseBox,
+                        entity -> entity != user);
+
+                for (Entity entity : entities) {
+                    if (entity instanceof LivingEntity livingEntity) {
+                        Vec3d wawadirection = user.getPos().subtract(livingEntity.getPos()).normalize();
+                        double p = 0.2;
+
+                        Vec3d velocity = wawadirection.multiply(p);
+                        livingEntity.setVelocity(0, 0, 0);
+                        livingEntity.addVelocity(velocity.x, velocity.y, velocity.z);
+                        livingEntity.velocityModified = true;
+
+                        livingEntity.damage(user.getDamageSources().playerAttack((PlayerEntity) user), 0.005F);
+                    }
+                }
+            }
+
+        }
+
+        super.usageTick(world, user, stack, remainingUseTicks);
+    }
+
     @Override
     public ActionResult useOnEntity(ItemStack stack, PlayerEntity user, LivingEntity entity, Hand hand) {
-        if (user.getOffHandStack().isOf(ModItems.REVERBIUM_GAUNTLET) && !hasEnchantment(user.getOffHandStack(),ModEnchantments.PROPULSION)) {
+        if (user.getOffHandStack().isOf(ModItems.REVERBIUM_GAUNTLET) && !hasEnchantment(user.getOffHandStack(),ModEnchantments.PROPULSION)&& !hasEnchantment(user.getOffHandStack(),ModEnchantments.MAGNETISM)) {
             World world = user.getWorld();
             user.attack(entity);
             user.spawnSweepAttackParticles();

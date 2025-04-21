@@ -19,8 +19,8 @@ public class TalismanItem extends Item {
 
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         ItemStack itemStack = user.getStackInHand(hand);
-        user.getItemCooldownManager().set(this, 500);
-        user.addStatusEffect(new StatusEffectInstance(ModEffects.CLOAKING,300 , 1));
+        user.getItemCooldownManager().set(this, 3600);
+        user.addStatusEffect(new StatusEffectInstance(ModEffects.CLOAKING,1200 , 1));
         if (world instanceof ServerWorld serverWorld) {
 
             ((Cloakable) user).primordia$setCloaked(true);
