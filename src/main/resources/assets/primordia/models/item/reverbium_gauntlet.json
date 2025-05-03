@@ -1,9 +1,17 @@
 {
-	"credit": "Made with Blockbench",
+	"credit": "BushyBot5 - Created and textured the model",
 	"texture_size": [32, 32],
 	"textures": {
 		"0": "primordia:item/weapons/reverbium_gauntlet"
 	},
+	"overrides": [
+		{
+			"predicate": {
+				"primordia:weapon_skin": 1
+			},
+			"model": "primordia:item/reverbium_gauntlet_jade"
+		}
+	],
 	"elements": [
 		{
 			"from": [6, 13, 6],

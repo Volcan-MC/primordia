@@ -1,0 +1,34 @@
+{
+  "parent": "primordia:life_of_a_rogue",
+  "criteria": {
+    "longsword_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": "primordia:netherite_longsword"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "netherite.longsword.desc.translate"
+    },
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "primordia:netherite_longsword"
+    },
+    "title": {
+      "translate": "netherite.longsword.title.translate"
+    }
+  },
+  "requirements": [
+    [
+      "longsword_netherite"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

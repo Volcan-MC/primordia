@@ -1,0 +1,7 @@
+{
+  "parent": "item/handheld",
+  "gui_light": "front",
+  "textures": {
+    "layer0": "primordia:item/weapons/tuning/tuning_blade_inv"
+  }
+}

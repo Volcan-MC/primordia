@@ -5,6 +5,11 @@
     "primordia:gold_longsword",
     "primordia:diamond_longsword",
     "primordia:netherite_longsword",
-    "primordia:reverbium_gauntlet"
-  ]
+    "primordia:reverbium_gauntlet",
+
+    "primordia:iron_dagger",
+    "primordia:gold_dagger",
+    "primordia:diamond_dagger",
+    "primordia:netherite_dagger"
+      ]
 }

@@ -3,23 +3,23 @@ package nebula.primordia.effect;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
-public class BleedingEffect extends StatusEffect {
-    public BleedingEffect(StatusEffectCategory category, int color) {
-        super(category, color);
+
+class BleedingEffect extends StatusEffect {
+    protected BleedingEffect(StatusEffectCategory statusEffectCategory, int i) {
+        super(statusEffectCategory, i);
     }
 
-    @Override
     public boolean applyUpdateEffect(LivingEntity entity, int amplifier) {
-                if(entity.isMobOrPlayer()) {
-                    entity.damage(entity.getDamageSources().wither(), 1.0F);
+        entity.damage(entity.getDamageSources().wither(), 1.0F);
+        return true;
+    }
+
+    public boolean canApplyUpdateEffect(int duration, int amplifier) {
+        int i = 40 >> amplifier;
+        if (i > 0) {
+            return duration % i == 0;
+        } else {
             return true;
         }
-
-        return super.applyUpdateEffect(entity, amplifier);
-    }
-
-    @Override
-    public boolean canApplyUpdateEffect(int duration, int amplifier) {
-        return true;
     }
 }

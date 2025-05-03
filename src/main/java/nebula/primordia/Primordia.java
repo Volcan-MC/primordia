@@ -51,6 +51,8 @@ public class Primordia implements ModInitializer {
 		ModLootTableModifiers.modifyLootTables();
 
 		FabricDefaultAttributeRegistry.register(ModEntities.SURGE, SurgeEntity.createAttributes());
+
+
 		ModItemComponents.init();
 		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
 			builder.registerPotionRecipe(Potions.STRONG_SLOWNESS, Items.SNOW_BLOCK, ModPotions.HYPOTHERMIA_POTION);
@@ -76,13 +78,6 @@ public class Primordia implements ModInitializer {
 						new TradedItem(Items.EMERALD, 9),
 						new ItemStack(ModItems.SWORD_CAST_LONGSWORD, 2), 7, 2, 0.04f));
 			});
-
-
-
-
-
-
-
 
 		LOGGER.info("Hello Fabric world!");
 	});

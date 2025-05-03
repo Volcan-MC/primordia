@@ -18,6 +18,7 @@ public record ForgeRecipe(Ingredient inputItem, ItemStack output) implements Rec
     public DefaultedList<Ingredient> getIngredients() {
         DefaultedList<Ingredient> list = DefaultedList.of();
         list.add(this.inputItem);
+        list.add(this.inputItem);
         return list;
     }
 
@@ -28,6 +29,7 @@ public record ForgeRecipe(Ingredient inputItem, ItemStack output) implements Rec
         }
 
         return inputItem.test(input.getStackInSlot(0));
+
     }
 
     @Override
@@ -60,6 +62,7 @@ public record ForgeRecipe(Ingredient inputItem, ItemStack output) implements Rec
                 Ingredient.DISALLOW_EMPTY_CODEC.fieldOf("ingredient").forGetter(ForgeRecipe::inputItem),
                 ItemStack.CODEC.fieldOf("result").forGetter(ForgeRecipe::output)
         ).apply(inst, ForgeRecipe::new));
+
 
         public static final PacketCodec<RegistryByteBuf, ForgeRecipe> STREAM_CODEC =
                 PacketCodec.tuple(

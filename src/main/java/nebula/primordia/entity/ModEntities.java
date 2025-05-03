@@ -13,6 +13,7 @@ public class ModEntities {
             Identifier.of(Primordia.MOD_ID, "surge"),
             EntityType.Builder.create(SurgeEntity::new, SpawnGroup.CREATURE)
                     .dimensions(1f, 2.5f).build());
+
     public static void registerModEntities() {
         Primordia.LOGGER.info("Registering Mod Entities for " + Primordia.MOD_ID);
     }

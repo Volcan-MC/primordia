@@ -13,6 +13,9 @@ public class ModItemComponents {
     public static final ComponentType<Integer> DASH_CAP =
             register("dash_cap", builder -> builder.codec(Codec.INT));
 
+    public static final ComponentType<Integer> WEAPON_SKIN =
+            register("weapon_skin", builder -> builder.codec(Codec.INT));
+
 
     private static <T>ComponentType<T> register(String id, UnaryOperator<ComponentType.Builder<T>> builderOperator) {
         return Registry.register(Registries.DATA_COMPONENT_TYPE, Identifier.of(Primordia.MOD_ID, id),

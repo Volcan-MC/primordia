@@ -2,8 +2,7 @@
 	"credit": "Made with Blockbench",
 	"textures": {
 		"0": "primordia:item/stormweaver_grand",
-		"gui_light": "front",
-		"particle": "primordia:item/stormweaver_grand"
+		"gui_light": "front"
 	},
 	"elements": [
 		{

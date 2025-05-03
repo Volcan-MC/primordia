@@ -109,19 +109,19 @@ public class ModItems {
 
     public static final Item IRON_LONGSWORD = registerItem("iron_longsword",
             new LongswordItem(ModToolMaterials.STORM, new Item.Settings()
-                    .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.STORM, 6, -3.2f))));
+                    .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.STORM, 2, -2.8f))));
 
     public static final Item GOLD_LONGSWORD = registerItem("gold_longsword",
             new LongswordItem(ModToolMaterials.STORM, new Item.Settings()
-                    .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.STORM, 6, -3.2f))));
+                    .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.STORM, 0, -2.8f))));
 
     public static final Item DIAMOND_LONGSWORD = registerItem("diamond_longsword",
             new LongswordItem(ModToolMaterials.STORM, new Item.Settings()
-                    .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.STORM, 6, -3.2f))));
+                    .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.STORM, 4, -2.8f))));
 
     public static final Item NETHERITE_LONGSWORD = registerItem("netherite_longsword",
             new LongswordItem(ModToolMaterials.STORM, new Item.Settings()
-                    .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.STORM, 6, -3.2f))));
+                    .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.STORM, 5, -2.8f))));
 
     public static final Item IRON_DAGGER = registerItem("iron_dagger",
             new SwordItem(ModToolMaterials.STORM, new Item.Settings()
@@ -147,7 +147,7 @@ public class ModItems {
 
     //public static final Item SURGE_CHARGE = registerItem("surge_charge", new SurgeChargeItem(new Item.Settings().rarity(Rarity.UNCOMMON)));
 
-    public static final Item STORM_TRIAL_KEY = registerItem("storm_trial_key", new Item(new Item.Settings()));
+    public static final Item STORM_TRIAL_KEY = registerItem("storm_trial_keyy", new Item(new Item.Settings()));
 
     public static final Item BOOK_OF_BLOOD_MANIPULATION = registerItem("book_of_blood_manipulation", new Item(new Item.Settings().maxCount(1)));
 
@@ -158,6 +158,32 @@ public class ModItems {
     public static final Item SWORD_CAST_ZWEIHANDER = registerItem("sword_cast_zweihander", new ZweihanderCastItem(new Item.Settings().maxCount(16)));
 
     public static final Item SWORD_CAST_DAGGER = registerItem("sword_cast_dagger", new DaggerCastItem(new Item.Settings().maxCount(16)));
+
+    public static final Item REVERBIUM_TRACKER = registerItem("reverbium_tracker", new CompassItem(new Item.Settings().maxCount(1)));
+
+    public static final Item AMETHYST_TUNING_FORK = registerItem("amethyst_tuning_fork",
+            new SwordItem(ModToolMaterials.STORM, new Item.Settings()
+                    .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.STORM, 1, -2.4f))));
+
+    public static final Item REVERBIUM_TUNING_BLADE = registerItem("reverbium_tuning_blade",
+            new SwordItem(ModToolMaterials.STORM, new Item.Settings()
+                    .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.STORM, 6, -3.2f))));
+
+    public static final Item IRON_ZWEIHANDER = registerItem("iron_zweihander",
+            new LongswordItem(ModToolMaterials.STORM, new Item.Settings()
+                    .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.STORM, 1, -2.4f))));
+
+    public static final Item GOLDEN_ZWEIHANDER = registerItem("golden_zweihander",
+            new LongswordItem(ModToolMaterials.STORM, new Item.Settings()
+                    .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.STORM, 1, -2.4f))));
+
+    public static final Item DIAMOND_ZWEIHANDER = registerItem("diamond_zweihander",
+            new LongswordItem(ModToolMaterials.STORM, new Item.Settings()
+                    .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.STORM, 1, -2.4f))));
+
+    public static final Item NETHERITE_ZWEIHANDER = registerItem("netherite_zweihander",
+            new LongswordItem(ModToolMaterials.STORM, new Item.Settings()
+                    .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.STORM, 1, -2.4f))));
 
 
 
@@ -181,7 +207,17 @@ public class ModItems {
             entries.add(BOTTLE_OF_ECHOED_SOULS);
             entries.add(REVERBIUM_INGOT);
         });
+
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(entries -> {
+            entries.add(REVERBIUM_TRACKER);
+            entries.add(AMETHYST_TUNING_FORK);
+
+        });
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(entries -> {
+            entries.add(REVERBIUM_TUNING_BLADE);
+            entries.add(REVERBIUM_GAUNTLET);
+
+        });
     }
 
-    private static Primordia nameTailor;
 }

@@ -509,6 +509,7 @@
     "description": {
       "translate": "advancements.primordia.starterkit.desc"
     },
+    "background": "minecraft:textures/gui/advancements/backgrounds/husbandry.png",
     "icon": {
       "count": 1,
       "id": "primordia:broken_sword"

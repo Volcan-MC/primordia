@@ -1,7 +1,8 @@
 {
   "type": "primordia:forge",
   "ingredient": {
-    "item": "primordia:sword_cast_normal"
+    "item": "primordia:sword_cast_normal",
+    "item_two": "minecraft:iron_ingot"
   },
   "result": {
     "count": 1,

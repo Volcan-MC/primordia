@@ -32,7 +32,6 @@ public abstract class PlayerEntityRendererMixin {
                 cir.setReturnValue(BipedEntityModel.ArmPose.CROSSBOW_CHARGE);
             }
 
-
         }
 
         if (itemStack.getItem() instanceof PrimordialLongswordItem || itemStack.getItem() instanceof PrimordialLongswordItem) {
@@ -40,14 +39,12 @@ public abstract class PlayerEntityRendererMixin {
                 cir.setReturnValue(BipedEntityModel.ArmPose.CROSSBOW_CHARGE);
             }
 
-
         }
 
         if (itemStack.getItem() instanceof LongswordItem || itemStack.getItem() instanceof LongswordItem) {
             if (!player.isUsingItem()) {
                 cir.setReturnValue(BipedEntityModel.ArmPose.CROSSBOW_CHARGE);
             }
-
 
         }
 

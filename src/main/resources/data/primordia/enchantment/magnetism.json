@@ -23,10 +23,9 @@
     "base": 5,
     "per_level_above_first": 7
   },
-  "primary_items": "#minecraft:enchantable/sword",
   "slots": [
     "mainhand"
   ],
-  "supported_items": "#minecraft:enchantable/weapon",
+  "supported_items": "#primordia:gauntlet_enchantable_tag",
   "weight": 15
 }
