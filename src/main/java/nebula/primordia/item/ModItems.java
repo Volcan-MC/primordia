@@ -147,7 +147,7 @@ public class ModItems {
 
     //public static final Item SURGE_CHARGE = registerItem("surge_charge", new SurgeChargeItem(new Item.Settings().rarity(Rarity.UNCOMMON)));
 
-    public static final Item STORM_TRIAL_KEY = registerItem("storm_trial_keyy", new Item(new Item.Settings()));
+    public static final Item STORM_TRIAL_KEY = registerItem("storm_trial_key", new Item(new Item.Settings()));
 
     public static final Item BOOK_OF_BLOOD_MANIPULATION = registerItem("book_of_blood_manipulation", new Item(new Item.Settings().maxCount(1)));
 

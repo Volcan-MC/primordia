@@ -29,7 +29,7 @@
   "item.primordia.reverbium_chestplate": "Reverbium Chestplate",
   "item.primordia.reverbium_leggings": "Reverbium Leggings",
   "item.primordia.reverbium_boots": "Reverbium Boots",
-  "item.primordia.storm_trial_key": "Key Of The Keep",
+  "item.primordia.storm_trial_key": "Key of the Keep",
   "item.primordia.surge_spawn_egg": "Surge Spawn Egg",
   "item.primordia.reverbium_gauntlet": "Reverbium Gauntlet",
   "item.primordia.iron_dagger": "Iron Dagger",
@@ -90,5 +90,6 @@
   "enchantment.primordia.magnetism": "Magnetism",
   "enchantment.primordia.vampirism": "Vampirism",
   "enchantment.primordia.eject": "Ejection",
+
   "entity.primordia.surge": "Surge"
 }
