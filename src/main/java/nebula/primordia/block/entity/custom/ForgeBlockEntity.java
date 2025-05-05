@@ -137,7 +137,7 @@ public class ForgeBlockEntity extends BlockEntity implements ExtendedScreenHandl
 
     private boolean hasRecipe() {
         Optional<RecipeEntry<ForgeRecipe>> recipe = getCurrentRecipe();
-        Primordia.LOGGER.info(recipe.toString());
+        //Primordia.LOGGER.info(recipe.toString());
         if(recipe.isPresent()) {
             //Primordia.LOGGER.info("match found! :D");
             ItemStack output = recipe.get().value().output().copy();
