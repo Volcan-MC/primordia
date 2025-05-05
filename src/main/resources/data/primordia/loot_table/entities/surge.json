@@ -41,7 +41,7 @@
               "function": "minecraft:enchanted_count_increase"
             }
           ],
-          "name": "minecraft:emerald"
+          "name": "primordia:storm_trial_key"
         }
       ],
       "rolls": 1.0
