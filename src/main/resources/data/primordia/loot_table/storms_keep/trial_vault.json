@@ -2,84 +2,161 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "rolls": 3,
-      "bonus_rolls": 2,
+      "rolls": {
+        "type": "minecraft:uniform",
+        "min": 1,
+        "max": 2
+      },
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:netherite_block"
+          "name": "minecraft:iron_sword",
+          "weight": 1
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:nether_brick"
+          "name": "diamond",
+          "weight": 2
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:soul_sand"
+          "name": "minecraft:gold_ingot",
+          "weight": 2
         },
         {
           "type": "minecraft:item",
-          "name": "primordia:bottle_of_echoed_souls"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:golden_boots"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:chainmail_chestplate"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:chainmail_leggings"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:chainmail_helmet"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:book",
+          "name": "primordia:diamond_dagger",
+          "weight": 1,
           "functions": [
             {
-              "function": "minecraft:enchant_randomly",
-              "enchantments": [
-                "minecraft:sharpness"
-              ]
+              "function": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:uniform",
+                "min": 45,
+                "max": 30
+              }
             }
           ]
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:potion"
+          "name": "primordia:bottle_of_echoed_souls",
+          "weight": 2
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:golden_apple"
+          "name": "minecraft:iron_chestplate",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:uniform",
+                "min": 50,
+                "max": 35
+              }
+            }
+          ]
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:raw_gold"
+          "name": "ancient_debris",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "rolls": 3,
+      "bonus_rolls": 2,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "bow",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:uniform",
+                "min": 40,
+                "max": 25
+              }
+            }
+          ]
         },
         {
           "type": "minecraft:item",
-          "name": "primordia:gold_dagger"
+          "name": "primordia:iron_dagger"
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:diamond_sword"
+          "name": "minecraft:book",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:enchant_randomly"
+            }
+          ]
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:golden_chestplate"
+          "name": "minecraft:soul_sand",
+          "weight": 2
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:ancient_debris"
+          "name": "minecraft:arrow",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 6,
+                "max": 10
+              }
+            }
+          ]
         },
         {
           "type": "minecraft:item",
-          "name": "primordia:tattered_cloth"
+          "name": "primordia:tattered_cloth",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_boots",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_helmet",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:uniform",
+                "min": 30,
+                "max": 20
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:cobblestone",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 7,
+                "max": 15
+              }
+            }
+          ]
         }
       ]
     }

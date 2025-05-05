@@ -119,7 +119,6 @@ public class ForgeBlockEntity extends BlockEntity implements ExtendedScreenHandl
 
     private void craftItem() {
         Optional<RecipeEntry<ForgeRecipe>> recipe = getCurrentRecipe();
-
         if (recipe.isPresent()){
             ItemStack output = recipe.get().value().output();
             this.removeStack(INPUT_SLOT, 1);
@@ -138,25 +137,27 @@ public class ForgeBlockEntity extends BlockEntity implements ExtendedScreenHandl
 
     private boolean hasRecipe() {
         Optional<RecipeEntry<ForgeRecipe>> recipe = getCurrentRecipe();
-        if(recipe.isEmpty()) {
-            Primordia.LOGGER.info("no match found :C for: " + inventory.getFirst() + ", " + inventory.get(CAST_SLOT));
+        Primordia.LOGGER.info(recipe.toString());
+        if(recipe.isPresent()) {
+            //Primordia.LOGGER.info("match found! :D");
+            ItemStack output = recipe.get().value().output().copy();
+            return canInsertAmountIntoOutputSlot(output.getCount()) && canInsertItemIntoOutputSlot(output);
+        }
+        else {
+            //Primordia.LOGGER.info("no match found :C");
             return false;
         }
-        Primordia.LOGGER.info("match found! :D");
-        ItemStack output = recipe.get().value().output();
-        return canInsertAmountIntoOutputSlot(output.getCount()) && canInsertItemIntoOutputSlot(output);
     }
 
     private Optional<RecipeEntry<ForgeRecipe>> getCurrentRecipe() {
-        if (this.getWorld() != null){
-            return this.getWorld().getRecipeManager()
-                    .getFirstMatch(ForgeRecipe.Type.INSTANCE, new ForgeRecipeInput(inventory.getFirst(), inventory.get(CAST_SLOT)), this.getWorld());
+        if (this.world != null){
+            ForgeRecipeInput input = new ForgeRecipeInput(inventory.getFirst(), inventory.get(CAST_SLOT));
+            return this.world.getRecipeManager()
+                    .getFirstMatch(ForgeRecipe.Type.INSTANCE, input, world);
         }
         else {
-            Primordia.LOGGER.info("world is null my guy");
             return Optional.empty();
         }
-
     }
 
     private boolean canInsertItemIntoOutputSlot(ItemStack output) {

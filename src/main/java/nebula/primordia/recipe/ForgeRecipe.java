@@ -25,7 +25,7 @@ public record ForgeRecipe(Ingredient input, Ingredient cast, ItemStack output) i
 
     @Override
     public boolean matches(ForgeRecipeInput input, World world) {
-        return false;
+        return this.input.test(input.getStackInSlot(0)) && this.cast.test(input.getStackInSlot(1));
     }
 
     @Override
