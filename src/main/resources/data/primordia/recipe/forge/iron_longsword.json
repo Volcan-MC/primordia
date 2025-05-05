@@ -1,6 +1,9 @@
 {
   "type": "primordia:forge",
-  "ingredient": {
+  "input": {
+    "item": "minecraft:iron_ingot"
+  },
+  "cast": {
     "item": "primordia:sword_cast_longsword"
   },
   "result": {

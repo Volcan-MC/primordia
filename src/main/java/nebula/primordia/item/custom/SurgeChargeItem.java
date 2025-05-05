@@ -20,7 +20,6 @@ import net.minecraft.world.World;
 
 public class SurgeChargeItem extends Item implements ProjectileItem {
     private static final int COOLDOWN = 10;
-
     public SurgeChargeItem(Item.Settings settings) {
         super(settings);
     }

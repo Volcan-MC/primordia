@@ -1,0 +1,13 @@
+{
+  "type": "primordia:forge",
+  "input": {
+    "item": "minecraft:iron_ingot"
+  },
+  "cast": {
+    "item": "primordia:sword_cast_normal"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraft:iron_sword"
+  }
+}

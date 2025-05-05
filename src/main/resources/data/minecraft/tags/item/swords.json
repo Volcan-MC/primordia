@@ -1,4 +1,5 @@
 {
+  "replace": false,
   "values": [
     "primordia:stormweaver",
     "primordia:iron_longsword",
@@ -6,10 +7,9 @@
     "primordia:diamond_longsword",
     "primordia:netherite_longsword",
     "primordia:reverbium_gauntlet",
-
     "primordia:iron_dagger",
     "primordia:gold_dagger",
     "primordia:diamond_dagger",
     "primordia:netherite_dagger"
-      ]
+  ]
 }

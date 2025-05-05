@@ -10,22 +10,25 @@ import net.minecraft.text.Text;
 
 import java.util.List;
 
-public class StormWeaverItem extends SwordItem {
-    public StormWeaverItem(ToolMaterial toolMaterial, Settings settings) {
+public class StormweaverItem extends SwordItem {
+    public StormweaverItem(ToolMaterial toolMaterial, Settings settings) {
         super(toolMaterial, settings);
     }
     @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         return super.postHit(stack, target, attacker);
     }
-    private void isEnchantable() {
+
+    @Override
+    public boolean isEnchantable(ItemStack stack) {
+        return true;
     }
 
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
         if(Screen.hasShiftDown()) {
             tooltip.add(Text.translatable("tooltip.primordia.weapon.twohanded"));
-            tooltip.add(Text.translatable("tooltip.primordia.stormweaver.shift_down"));
+            tooltip.add(Text.translatable("tooltip.primordia.shift"));
         } else {
             tooltip.add(Text.translatable("tooltip.primordia.weapon.twohanded"));
             tooltip.add(Text.translatable("tooltip.primordia.stormweaver"));

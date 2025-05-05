@@ -1,10 +1,8 @@
 package nebula.primordia.mixin;
 
 
-import nebula.primordia.effect.ModEffects;
 import nebula.primordia.item.custom.LongswordItem;
-import nebula.primordia.item.custom.PrimordialLongswordItem;
-import nebula.primordia.item.custom.StormWeaverItem;
+import nebula.primordia.item.custom.StormweaverItem;
 import nebula.primordia.util.Cloakable;
 import net.minecraft.client.model.ModelPart;
 import net.minecraft.client.network.AbstractClientPlayerEntity;
@@ -26,28 +24,11 @@ public abstract class PlayerEntityRendererMixin {
     @Inject(method = "getArmPose", at = @At("HEAD"), cancellable = true)
     private static void getArmPose(AbstractClientPlayerEntity player, Hand hand, CallbackInfoReturnable<BipedEntityModel.ArmPose> cir) {
         ItemStack itemStack = player.getStackInHand(hand);
-
-        if (itemStack.getItem() instanceof StormWeaverItem || itemStack.getItem() instanceof StormWeaverItem) {
+        if (itemStack.getItem() instanceof StormweaverItem || itemStack.getItem() instanceof LongswordItem) {
             if (!player.isUsingItem()) {
                 cir.setReturnValue(BipedEntityModel.ArmPose.CROSSBOW_CHARGE);
             }
-
         }
-
-        if (itemStack.getItem() instanceof PrimordialLongswordItem || itemStack.getItem() instanceof PrimordialLongswordItem) {
-            if (!player.isUsingItem()) {
-                cir.setReturnValue(BipedEntityModel.ArmPose.CROSSBOW_CHARGE);
-            }
-
-        }
-
-        if (itemStack.getItem() instanceof LongswordItem || itemStack.getItem() instanceof LongswordItem) {
-            if (!player.isUsingItem()) {
-                cir.setReturnValue(BipedEntityModel.ArmPose.CROSSBOW_CHARGE);
-            }
-
-        }
-
     }
 
     @Inject(method = "renderArm", at = @At("HEAD"), cancellable = true)

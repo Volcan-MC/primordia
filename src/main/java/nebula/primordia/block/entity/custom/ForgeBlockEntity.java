@@ -1,10 +1,10 @@
 package nebula.primordia.block.entity.custom;
 
+import nebula.primordia.Primordia;
 import nebula.primordia.block.entity.ImplementedInventory;
 import nebula.primordia.block.entity.ModBlockEntities;
 import nebula.primordia.recipe.ForgeRecipe;
 import nebula.primordia.recipe.ForgeRecipeInput;
-import nebula.primordia.recipe.ModRecipes;
 import nebula.primordia.screen.custom.ForgeScreenHandler;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.minecraft.block.BlockState;
@@ -28,13 +28,14 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Objects;
 import java.util.Optional;
 
 public class ForgeBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory<BlockPos>, ImplementedInventory {
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(3, ItemStack.EMPTY);
     private static final int INPUT_SLOT = 0;
     private static final int CAST_SLOT = 2;
-    private static final int OUTPUT_SLOT = 1;
+    private static final int OUTPUT_SLOT = 0;
 
     protected final PropertyDelegate propertyDelegate;
     private int progress = 0;
@@ -63,14 +64,17 @@ public class ForgeBlockEntity extends BlockEntity implements ExtendedScreenHandl
             }
         };
     }
+
     @Override
     public BlockPos getScreenOpeningData(ServerPlayerEntity player) {
         return this.pos;
     }
+
     @Override
     public DefaultedList<ItemStack> getItems() {
         return inventory;
     }
+
     @Override
     public Text getDisplayName() {
         return Text.translatable("block.primordia.forge");
@@ -94,11 +98,11 @@ public class ForgeBlockEntity extends BlockEntity implements ExtendedScreenHandl
         maxProgress = nbt.getInt("forge.max_progress");
         super.readNbt(nbt, registryLookup);
     }
+
     public void tick(World world, BlockPos pos, BlockState state) {
         if(hasRecipe()) {
             increaseCraftingProgress();
             markDirty(world, pos, state);
-
             if(hasCraftingFinished()) {
                 craftItem();
                 resetProgress();
@@ -107,37 +111,54 @@ public class ForgeBlockEntity extends BlockEntity implements ExtendedScreenHandl
             resetProgress();
         }
     }
+
     private void resetProgress() {
         this.progress = 0;
         this.maxProgress = 72;
     }
+
     private void craftItem() {
         Optional<RecipeEntry<ForgeRecipe>> recipe = getCurrentRecipe();
 
-        ItemStack output = recipe.get().value().output();
-        this.removeStack(INPUT_SLOT, 1);
-        this.removeStack(CAST_SLOT, 1);
-        this.setStack(OUTPUT_SLOT, new ItemStack(output.getItem(),
-                this.getStack(OUTPUT_SLOT).getCount() + output.getCount()));
+        if (recipe.isPresent()){
+            ItemStack output = recipe.get().value().output();
+            this.removeStack(INPUT_SLOT, 1);
+            this.removeStack(CAST_SLOT, 1);
+            this.setStack(OUTPUT_SLOT, new ItemStack(output.getItem(),
+                    this.getStack(OUTPUT_SLOT).getCount() + output.getCount()));
+        }
     }
+
     private boolean hasCraftingFinished() {
         return this.progress >= this.maxProgress;
     }
     private void increaseCraftingProgress() {
         this.progress++;
     }
+
     private boolean hasRecipe() {
         Optional<RecipeEntry<ForgeRecipe>> recipe = getCurrentRecipe();
         if(recipe.isEmpty()) {
+            Primordia.LOGGER.info("no match found :C for: " + inventory.getFirst() + ", " + inventory.get(CAST_SLOT));
             return false;
         }
+        Primordia.LOGGER.info("match found! :D");
         ItemStack output = recipe.get().value().output();
         return canInsertAmountIntoOutputSlot(output.getCount()) && canInsertItemIntoOutputSlot(output);
     }
+
     private Optional<RecipeEntry<ForgeRecipe>> getCurrentRecipe() {
-        return this.getWorld().getRecipeManager()
-                .getFirstMatch(ModRecipes.FORGE_TYPE, new ForgeRecipeInput(inventory.get(INPUT_SLOT)), this.getWorld());
+        if (this.getWorld() != null){
+            return this.getWorld().getRecipeManager()
+                    .getFirstMatch(ForgeRecipe.Type.INSTANCE, new ForgeRecipeInput(inventory.getFirst(), inventory.get(CAST_SLOT)), this.getWorld());
+        }
+        else {
+            Primordia.LOGGER.info("world is null my guy");
+            return Optional.empty();
+        }
+
     }
+
     private boolean canInsertItemIntoOutputSlot(ItemStack output) {
         return this.getStack(OUTPUT_SLOT).isEmpty() || this.getStack(OUTPUT_SLOT).getItem() == output.getItem();
     }
@@ -146,11 +167,13 @@ public class ForgeBlockEntity extends BlockEntity implements ExtendedScreenHandl
         int currentCount = this.getStack(OUTPUT_SLOT).getCount();
         return maxCount >= currentCount + count;
     }
+
     @Nullable
     @Override
     public Packet<ClientPlayPacketListener> toUpdatePacket() {
         return BlockEntityUpdateS2CPacket.create(this);
     }
+
     @Override
     public NbtCompound toInitialChunkDataNbt(RegistryWrapper.WrapperLookup registryLookup) {
         return createNbt(registryLookup);

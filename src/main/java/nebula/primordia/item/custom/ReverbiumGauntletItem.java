@@ -32,10 +32,10 @@ import net.minecraft.world.World;
 import java.util.List;
 
 public class ReverbiumGauntletItem extends ShovelItem {
-
     public ReverbiumGauntletItem(ToolMaterial toolMaterial, Settings settings) {
         super(toolMaterial, settings);
     }
+
     public static AttributeModifiersComponent createAttributeModifiers(ToolMaterial material, int baseAttackDamage, float attackSpeed) {
         return AttributeModifiersComponent.builder()
                 .add(

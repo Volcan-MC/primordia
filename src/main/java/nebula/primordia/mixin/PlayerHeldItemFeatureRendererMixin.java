@@ -31,8 +31,6 @@ public abstract class PlayerHeldItemFeatureRendererMixin<T extends PlayerEntity,
     @Inject(method = "renderItem", at = @At("HEAD"), cancellable = true)
     protected void renderItem(LivingEntity entity, ItemStack stack, ModelTransformationMode transformationMode, Arm arm, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, CallbackInfo ci) {
         if (!entity.isUsingItem()) {
-
-
             if ((entity.getMainArm() == Arm.RIGHT && arm == Arm.LEFT) && entity.getMainHandStack().getItem() == ModItems.STORMWEAVER) {
                 ci.cancel();
                 return;
@@ -41,18 +39,6 @@ public abstract class PlayerHeldItemFeatureRendererMixin<T extends PlayerEntity,
                 ci.cancel();
                 return;
             }
-
-            if ((entity.getMainArm() == Arm.RIGHT && arm == Arm.LEFT) && entity.getMainHandStack().getItem() == ModItems.PRIMORDIAL_LONGSWORD) {
-                ci.cancel();
-                return;
-            }
-            if ((entity.getMainArm() == Arm.LEFT && arm == Arm.RIGHT) && entity.getMainHandStack().getItem() == ModItems.PRIMORDIAL_LONGSWORD) {
-                ci.cancel();
-                return;
-            }
-
-
-
             super.renderItem(entity, stack, transformationMode, arm, matrices, vertexConsumers, light);
         }
     }

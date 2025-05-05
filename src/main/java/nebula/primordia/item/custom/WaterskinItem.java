@@ -24,15 +24,15 @@ public class WaterskinItem extends Item {
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         ItemStack itemStack = user.getStackInHand(hand);
         user.getItemCooldownManager().set(this, 500);
-        ((LivingEntity) user).addStatusEffect(new StatusEffectInstance(ModEffects.BLEEDING,300 , 1));
+        user.addStatusEffect(new StatusEffectInstance(ModEffects.BLEEDING,300 , 1));
         return TypedActionResult.success(itemStack, world.isClient());
     }
 
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
         if(Screen.hasShiftDown()) {
-            tooltip.add(Text.translatable("tooltip.primordia.contents"));
+            tooltip.add(Text.translatable("tooltip.primordia.shift_contents"));
         } else {
-            tooltip.add(Text.translatable("tooltip.primordia.waterskin"));
+            tooltip.add(Text.of("§7- Empty -"));
         }
         super.appendTooltip(stack, context, tooltip, type);
     }

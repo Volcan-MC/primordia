@@ -12,7 +12,6 @@ import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 
 public class TalismanItem extends Item {
-
     public TalismanItem(Settings Settings) {
         super(Settings);
     }
@@ -21,13 +20,9 @@ public class TalismanItem extends Item {
         ItemStack itemStack = user.getStackInHand(hand);
         user.getItemCooldownManager().set(this, 3600);
         user.addStatusEffect(new StatusEffectInstance(ModEffects.CLOAKING,1200 , 1));
-        if (world instanceof ServerWorld serverWorld) {
-
+        if (world instanceof ServerWorld) {
             ((Cloakable) user).primordia$setCloaked(true);
-
         }
-
-
         return TypedActionResult.success(itemStack, world.isClient());
     }
 }

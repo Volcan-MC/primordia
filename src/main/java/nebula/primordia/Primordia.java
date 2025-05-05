@@ -10,7 +10,7 @@ import nebula.primordia.item.ModItemComponents;
 import nebula.primordia.item.ModItemGroups;
 import nebula.primordia.item.ModItems;
 import nebula.primordia.potion.ModPotions;
-import nebula.primordia.recipe.ModRecipes;
+import nebula.primordia.recipe.ForgeRecipe;
 import nebula.primordia.screen.ModScreenHandlers;
 import nebula.primordia.util.Cloakable;
 import nebula.primordia.util.ModLootTableModifiers;
@@ -22,6 +22,8 @@ import net.fabricmc.fabric.api.registry.FabricBrewingRecipeRegistryBuilder;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.potion.Potions;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.village.TradeOffer;
 import net.minecraft.village.TradedItem;
@@ -37,6 +39,11 @@ public class Primordia implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		//register recipe type
+		Registry.register(Registries.RECIPE_SERIALIZER, ForgeRecipe.Serializer.ID, ForgeRecipe.Serializer.INSTANCE);
+		Registry.register(Registries.RECIPE_TYPE, ForgeRecipe.Type.ID, ForgeRecipe.Type.INSTANCE);
+
+		//register content
 		ModBlocks.registerModBlocks();
 		ModItems.registerModItems();
 		ModEffects.registerEffects();
@@ -45,13 +52,10 @@ public class Primordia implements ModInitializer {
 		ModBlockEntities.registerBlockEntities();
 		ModScreenHandlers.registerScreenHandlers();
 		ModEnchantmentEffects.registerEnchantmentEffects();
-		ModRecipes.registerRecipes();
 		ModEntities.registerModEntities();
 
 		ModLootTableModifiers.modifyLootTables();
-
 		FabricDefaultAttributeRegistry.register(ModEntities.SURGE, SurgeEntity.createAttributes());
-
 
 		ModItemComponents.init();
 		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {

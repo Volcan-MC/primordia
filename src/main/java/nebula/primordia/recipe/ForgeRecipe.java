@@ -10,36 +10,32 @@ import net.minecraft.recipe.Recipe;
 import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.RecipeType;
 import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
 
-public record ForgeRecipe(Ingredient inputItem, ItemStack output) implements Recipe<ForgeRecipeInput> {
+public record ForgeRecipe(Ingredient input, Ingredient cast, ItemStack output) implements Recipe<ForgeRecipeInput> {
     @Override
     public DefaultedList<Ingredient> getIngredients() {
         DefaultedList<Ingredient> list = DefaultedList.of();
-        list.add(this.inputItem);
-        list.add(this.inputItem);
+        list.add(this.input);
+        list.add(this.cast);
         return list;
     }
 
     @Override
     public boolean matches(ForgeRecipeInput input, World world) {
-        if(world.isClient()) {
-            return false;
-        }
-
-        return inputItem.test(input.getStackInSlot(0));
-
+        return false;
     }
 
     @Override
     public ItemStack craft(ForgeRecipeInput input, RegistryWrapper.WrapperLookup lookup) {
-        return output.copy();
+        return ItemStack.EMPTY;
     }
 
     @Override
     public boolean fits(int width, int height) {
-        return true;
+        return false;
     }
 
     @Override
@@ -49,24 +45,28 @@ public record ForgeRecipe(Ingredient inputItem, ItemStack output) implements Rec
 
     @Override
     public RecipeSerializer<?> getSerializer() {
-        return ModRecipes.FORGE_SERIALIZER;
+        return Serializer.INSTANCE;
     }
 
     @Override
     public RecipeType<?> getType() {
-        return ModRecipes.FORGE_TYPE;
+        return Type.INSTANCE;
     }
 
     public static class Serializer implements RecipeSerializer<ForgeRecipe> {
         public static final MapCodec<ForgeRecipe> CODEC = RecordCodecBuilder.mapCodec(inst -> inst.group(
-                Ingredient.DISALLOW_EMPTY_CODEC.fieldOf("ingredient").forGetter(ForgeRecipe::inputItem),
+                Ingredient.DISALLOW_EMPTY_CODEC.fieldOf("input").forGetter(ForgeRecipe::input),
+                Ingredient.DISALLOW_EMPTY_CODEC.fieldOf("cast").forGetter(ForgeRecipe::cast),
                 ItemStack.CODEC.fieldOf("result").forGetter(ForgeRecipe::output)
         ).apply(inst, ForgeRecipe::new));
 
+        public static final Serializer INSTANCE = new Serializer();
+        public static final Identifier ID = Identifier.of("primordia:forge");
 
         public static final PacketCodec<RegistryByteBuf, ForgeRecipe> STREAM_CODEC =
                 PacketCodec.tuple(
-                        Ingredient.PACKET_CODEC, ForgeRecipe::inputItem,
+                        Ingredient.PACKET_CODEC, ForgeRecipe::input,
+                        Ingredient.PACKET_CODEC, ForgeRecipe::cast,
                         ItemStack.PACKET_CODEC, ForgeRecipe::output,
                         ForgeRecipe::new);
 
@@ -79,5 +79,14 @@ public record ForgeRecipe(Ingredient inputItem, ItemStack output) implements Rec
         public PacketCodec<RegistryByteBuf, ForgeRecipe> packetCodec() {
             return STREAM_CODEC;
         }
+    }
+
+    public static class Type implements RecipeType<ForgeRecipe> {
+        // Define ExampleRecipe.Type as a singleton by making its constructor private and exposing an instance.
+        private Type() {}
+        public static final Type INSTANCE = new Type();
+
+        // This will be needed in step 4
+        public static final Identifier ID = Identifier.of("primordia:forge");
     }
 }
